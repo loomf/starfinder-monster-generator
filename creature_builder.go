@@ -13,18 +13,19 @@ type Config interface {
 }
 
 type ArrayConfig struct {
-	CR int
+	CR        float64
 	ArrayType string //TODO: enum this up
 }
 
 func (config ArrayConfig) Apply(builder *CreatureBuilder) {
 	builder.ArrayConfig = config
-	array := LookupArray(config)
+	//array := LookupArray(config)
 	// TODO: copy StatsArray into corresponding spots in builder.Creature
 }
 
 func LookupArray(config ArrayConfig) StatsArray {
 	// TODO: use CR and ArrayType
+    return StatsArray{}
 }
 
 type TypeConfig struct {
@@ -35,17 +36,15 @@ type TypeConfig struct {
 
 func (config TypeConfig) Apply(builder *CreatureBuilder) {
 	builder.TypeConfig = config
-	// TODO: apply adjustment modifiers to creature
 }
 
 type SubtypeConfig struct {
-	Name string
+	Name      string
 	Abilities map[Ability]struct{}
-	Skills string //TODO: figure out how to handle the options here
-	Speed map[string]bool
+	Skills    string //TODO: figure out how to handle the options here
+	Speed     map[string]bool
 }
 
 func (config SubtypeConfig) Apply(builder *CreatureBuilder) {
 	builder.SubtypeConfig = config
-	config.Adjustments.Adjust(&builder.Array)
 }
