@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 type AbilityType int
@@ -40,12 +40,6 @@ type Adjustments struct {
 	Fort, Reflex, Will int
 }
 
-//	{	"name": "Aquatic",
-//		"abilities": ["Water Breathing", "Amphibious"],
-//		"skills": [{"Athletics":"master"}],
-//		"speed": ["Swim"]
-//	},
-
 type Subtype struct {
 	Name      string
 	Abilities []string
@@ -58,24 +52,6 @@ type Ability struct {
 	AbilityType string
 	Format      string
 }
-
-//  "Combatant": {
-//     "1": {
-//        "EAC": 11,
-//        "KAC": 13,
-//        "FORT": 3,
-//        "REF": 3,
-//        "WILL": 1,
-//        "HP": 20,
-//        "ABILITY DC": 10,
-//        "BASE SPELL DC": 9,
-//        "ABILITY SCORE BONUSES": [4, 2, 1],
-//        "SPECIAL ABILITIES": 1,
-//        "MASTER SKILL BONUS": 10,
-//        "MASTER SKILLS": 1,
-//        "GOOD SKILL BONUS": 5,
-//        "GOOD SKILLS": 2
-//     },
 
 type Array struct {
 	Name                string
@@ -93,18 +69,18 @@ type Array struct {
 }
 
 type Creature struct {
-	Skills map[string]int
+	CR                 string
+	XP                 int
+	Size               string
+	Initiative         int
+	Senses             map[string]bool
+	EAC, KAC           int
+	HP                 int
+	Fort, Reflex, Will int
+	DefensiveAbilities map[string]bool
+	DR                 string
+	Skills             map[string]int
 	//Spells                       map[Spell]int
-	CR                           string
-	XP                           int
-	Size                         string
-	Initiative                   int
-	Senses                       map[string]bool
-	EAC, KAC                     int
-	HP                           int
-	Fort, Reflex, Will           int
-	DefensiveAbilities           map[string]bool
-	DR                           string
 	Immunities                   map[string]bool
 	Resistances                  map[string]int
 	Speed                        map[string]int
@@ -116,7 +92,7 @@ type Creature struct {
 	AbilityDC, BaseSpellDC       int
 }
 
-func (this *CreatureBuilder) Build() Creature {
+func (this *CreatureBuilder) Build(skills []string) Creature {
 	creature := Creature{
 		CR:          this.Array.CR,
 		EAC:         this.Array.EAC,
@@ -129,7 +105,7 @@ func (this *CreatureBuilder) Build() Creature {
 		BaseSpellDC: this.Array.BaseSpellDC,
 	}
 
-    modifiers := this.Array.AbilityScoreBonuses[:]
+	modifiers := this.Array.AbilityScoreBonuses[:]
 	// 3 not as good ability scores
 	modifiers = append(modifiers, int((float64(modifiers[2])*0.95 - 0.25)))
 	modifiers = append(modifiers, int((float64(modifiers[3])*0.85 - 0.75)))
@@ -148,8 +124,41 @@ func (this *CreatureBuilder) Build() Creature {
 	}
 
 	// determine creatures skills
+    creature.AssignSkills(skills, this.MasterSkills, this.MasterSkillBonus, this.GoodSkills, this.GoodSkillBonus)
 
-    return creature
+	return creature
+}
+
+func (this *Creature) AssignSkills(skills []string, masterSkills, masterBonus, goodSkills, goodBonus int) {
+	this.Skills = make(map[string]int)
+	skillMap := make(map[string]struct{})
+	for _, skill := range skills {
+		skillMap[skill] = struct{}{}
+	}
+
+	assignSkills := func(desc string, numSkills, skillBonus int) {
+		for i := 0; i < numSkills; i++ {
+			skillList := make([]string, 0, len(skillMap))
+			for skill := range skillMap {
+				skillList = append(skillList, skill)
+			}
+			skill := GetOneOf("Choose a "+desc+" skill: ", skillList)
+			this.Skills[skill] = skillBonus
+			delete(skillMap, skill)
+		}
+	}
+	assignSkills("master", masterSkills, masterBonus)
+	if _, ok := this.Skills["Perception"]; ok {
+		// Perception was chosen as a master skill
+		// grant an extra good skill
+		goodSkills++
+	} else {
+		// Perception was not chosen as a master skill
+		// make it a good skill
+		this.Skills["Perception"] = goodBonus
+		delete(skillMap, "Perception")
+	}
+	assignSkills("good", goodSkills, goodBonus)
 }
 
 func (this *Creature) AssignAbilityScores(scores []int, primaryChoices []string, numPrimaries int) {
