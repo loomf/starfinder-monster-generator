@@ -17,10 +17,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	spew.Dump(subtypes)
 	builder := CreatureBuilder{}
 	builder.GetArrayType(arrays)
 	builder.GetType(types)
 	builder.GetSubtype(subtypes)
 	spew.Dump(builder)
+	spew.Dump(builder.Build())
 }

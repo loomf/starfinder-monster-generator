@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 	"math/rand"
 
 	"github.com/c-bata/go-prompt"
@@ -13,7 +13,7 @@ func NoComplete(prompt.Document) []prompt.Suggest {
 
 func GetOneOf(prefix string, choiceList []string) string {
 	for {
-        fmt.Println(choiceList)
+		fmt.Println(choiceList)
 		switch choice := prompt.Input(prefix, NoComplete); choice {
 		case "":
 			return choiceList[rand.Intn(len(choiceList))]

@@ -1,7 +1,6 @@
 package main
 
-import (
-)
+import ()
 
 type CreatureBuilder struct {
 	Array
@@ -16,13 +15,13 @@ func (this *CreatureBuilder) GetArrayType(arrayMap map[string](map[string]Array)
 	}
 	arrayType := GetOneOf("Array Type: ", arrayTypes)
 
-    crMap := arrayMap[arrayType]
-    crs := make([]string, 0, len(crMap))
-    for k := range crMap {
-        crs = append(crs, k)
-    }
-    cr := GetOneOf("CR: ", crs)
-    this.Array = crMap[cr]
+	crMap := arrayMap[arrayType]
+	crs := make([]string, 0, len(crMap))
+	for k := range crMap {
+		crs = append(crs, k)
+	}
+	cr := GetOneOf("CR: ", crs)
+	this.Array = crMap[cr]
 }
 
 func (this *CreatureBuilder) GetType(types []Type) {
