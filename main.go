@@ -21,10 +21,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	abilities, err := LoadAbilities("abilities.json")
+	if err != nil {
+		panic(err)
+	}
 	builder := CreatureBuilder{}
 	builder.GetArrayType(arrays)
 	builder.GetType(types)
 	builder.GetSubtype(subtypes)
 	spew.Dump(builder)
-	spew.Dump(builder.Build(skills))
+	spew.Dump(builder.Build(skills, abilities))
 }

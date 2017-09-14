@@ -18,17 +18,6 @@ const (
 	OTHER      AbilityType = iota
 )
 
-//	{	"name": "Aberration",
-//		"abilities": ["Darkvision"],
-//		"adjustments": {
-//			"intelligence": [-4,-5],
-//			"attackBonus": 0,
-//			"fort": 0,
-//			"reflex": 0,
-//			"will": 2
-//		}
-//	},
-
 type Type struct {
 	Name        string
 	Adjustments Adjustments
@@ -49,8 +38,9 @@ type Subtype struct {
 
 type Ability struct {
 	Name        string
-	AbilityType string
+	Type        string
 	Format      string
+	Description string
 }
 
 type Array struct {
@@ -62,6 +52,7 @@ type Array struct {
 	AbilityDC           int    `json:"ABILITY DC"`
 	BaseSpellDC         int    `json:"BASE SPELL DC"`
 	AbilityScoreBonuses [3]int `json:"ABILITY SCORE BONUSES"`
+	SpecialAbilities    int    `json:"SPECIAL ABILITIES"`
 	MasterSkillBonus    int    `json:"MASTER SKILL BONUS"`
 	MasterSkills        int    `json:"MASTER SKILLS"`
 	GoodSkillBonus      int    `json:"GOOD SKILL BONUS"`
@@ -73,26 +64,30 @@ type Creature struct {
 	XP                 int
 	Size               string
 	Initiative         int
-	Senses             map[string]bool
 	EAC, KAC           int
 	HP                 int
 	Fort, Reflex, Will int
-	DefensiveAbilities map[string]bool
 	DR                 string
 	Skills             map[string]int
 	//Spells                       map[Spell]int
-	Immunities                   map[string]bool
-	Resistances                  map[string]int
 	Speed                        map[string]int
-	Melee                        map[Attack]bool
-	Ranged                       map[Attack]bool
-	OffensiveAbilities           map[string]bool
+	Senses                       map[string]struct{}
+	Immunities                   map[string]struct{}
+	Resistances                  map[string]struct{}
+	Weaknesses                   map[string]struct{}
+	Specials                     map[string]struct{}
+	Melee                        map[Attack]struct{}
+	Ranged                       map[Attack]struct{}
+	OffensiveAbilities           map[string]struct{}
+	DefensiveAbilities           map[string]struct{}
+	SpecialAbilities             map[string]struct{}
+	OtherAbilities               map[string]struct{}
 	STR, DEX, CON, INT, WIS, CHA int
 	Languages                    map[string]bool
 	AbilityDC, BaseSpellDC       int
 }
 
-func (this *CreatureBuilder) Build(skills []string) Creature {
+func (this *CreatureBuilder) Build(skills []string, abilities []Ability) Creature {
 	creature := Creature{
 		CR:          this.Array.CR,
 		EAC:         this.Array.EAC,
@@ -104,6 +99,11 @@ func (this *CreatureBuilder) Build(skills []string) Creature {
 		AbilityDC:   this.Array.AbilityDC,
 		BaseSpellDC: this.Array.BaseSpellDC,
 	}
+
+	// apply adjustments from type
+	creature.Fort += this.Type.Adjustments.Fort
+	creature.Reflex += this.Type.Adjustments.Reflex
+	creature.Will += this.Type.Adjustments.Will
 
 	modifiers := this.Array.AbilityScoreBonuses[:]
 	// 3 not as good ability scores
@@ -124,9 +124,53 @@ func (this *CreatureBuilder) Build(skills []string) Creature {
 	}
 
 	// determine creatures skills
-    creature.AssignSkills(skills, this.MasterSkills, this.MasterSkillBonus, this.GoodSkills, this.GoodSkillBonus)
+	creature.AssignSkills(skills, this.MasterSkills, this.MasterSkillBonus, this.GoodSkills, this.GoodSkillBonus)
+
+	// determine creature abilities
+	creature.AssignAbilities(abilities, this.SpecialAbilities)
 
 	return creature
+}
+
+func (this *Creature) AssignAbilities(abilities []Ability, numAbilities int) {
+	this.Senses = make(map[string]struct{})
+	this.Immunities = make(map[string]struct{})
+	this.Resistances = make(map[string]struct{})
+	this.OffensiveAbilities = make(map[string]struct{})
+	this.DefensiveAbilities = make(map[string]struct{})
+	this.SpecialAbilities = make(map[string]struct{})
+	this.OtherAbilities = make(map[string]struct{})
+	abilMap := make(map[string]Ability)
+	for _, ability := range abilities {
+		abilMap[ability.Name] = ability
+	}
+
+	for i := 0; i < numAbilities; i++ {
+		abilList := make([]string, 0, len(abilMap))
+		for ability := range abilMap {
+			abilList = append(abilList, ability)
+		}
+		ability := abilMap[GetOneOf("Choose an ability: ", abilList)]
+		switch ability.Type {
+		case "SENSE":
+			this.Senses[ability.Name] = struct{}{}
+		case "IMMUNITY":
+			this.Immunities[ability.Name] = struct{}{}
+		case "RESIST":
+			this.Resistances[ability.Name] = struct{}{}
+		case "OFFENSE":
+			this.OffensiveAbilities[ability.Name] = struct{}{}
+		case "DEFENSE":
+			this.DefensiveAbilities[ability.Name] = struct{}{}
+		case "SPECIAL":
+			this.SpecialAbilities[ability.Name] = struct{}{}
+		case "OTHER":
+			this.OtherAbilities[ability.Name] = struct{}{}
+		default:
+			panic(fmt.Sprintf("Unknown ability type: %s for ability %s", ability.Type, ability.Name))
+		}
+		delete(abilMap, ability.Name)
+	}
 }
 
 func (this *Creature) AssignSkills(skills []string, masterSkills, masterBonus, goodSkills, goodBonus int) {
