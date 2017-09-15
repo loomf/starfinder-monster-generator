@@ -153,7 +153,7 @@ func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []stri
 		abilMap[ability.Name] = ability
 	}
 
-    assignAbility := func (ability Ability) {
+	assignAbility := func(ability Ability) {
 		switch ability.Type {
 		case "SENSE":
 			this.Senses[ability.Name] = struct{}{}
@@ -175,11 +175,11 @@ func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []stri
 			panic(fmt.Sprintf("Unknown ability type: %s for ability %s", ability.Type, ability.Name))
 		}
 		delete(abilMap, ability.Name)
-    }
+	}
 
-    for _, ability := range extraAbilities {
-        assignAbility(abilMap[ability])
-    }
+	for _, ability := range extraAbilities {
+		assignAbility(abilMap[ability])
+	}
 
 	for i := 0; i < numAbilities; i++ {
 		abilList := make([]string, 0, len(abilMap))
@@ -187,7 +187,7 @@ func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []stri
 			abilList = append(abilList, ability)
 		}
 		ability := abilMap[GetOneOf("Choose an ability: ", abilList)]
-        assignAbility(ability)
+		assignAbility(ability)
 	}
 }
 
@@ -198,15 +198,15 @@ func (this *Creature) AssignSkills(skills []string, extraSkills map[string]strin
 		skillMap[skill] = struct{}{}
 	}
 
-    for skill, quality := range extraSkills {
-        switch quality {
-        case "master":
-            this.Skills[skill] = masterBonus
-        case "good":
-            this.Skills[skill] = goodBonus
-        }
-        delete(skillMap, skill)
-    }
+	for skill, quality := range extraSkills {
+		switch quality {
+		case "master":
+			this.Skills[skill] = masterBonus
+		case "good":
+			this.Skills[skill] = goodBonus
+		}
+		delete(skillMap, skill)
+	}
 
 	assignSkills := func(desc string, numSkills, skillBonus int) {
 		for i := 0; i < numSkills; i++ {
