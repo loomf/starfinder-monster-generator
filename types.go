@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 )
 
 type AbilityType int
@@ -57,6 +59,43 @@ type Array struct {
 	MasterSkills        int    `json:"MASTER SKILLS"`
 	GoodSkillBonus      int    `json:"GOOD SKILL BONUS"`
 	GoodSkills          int    `json:"GOOD SKILLS"`
+
+	AttackArray
+}
+
+type AttackArray struct {
+	High, Low                 int
+	Energy, Kinetic, Standard Dice
+}
+
+type Dice struct {
+	Num, Size int
+}
+
+func (this *Dice) UnmarshalJSON(b []byte) error {
+	unquoted, err := strconv.Unquote(string(b))
+	if err != nil {
+		return err
+	}
+	badPieces := strings.Split(unquoted, "+")
+	unquoted = badPieces[0]
+	pieces := strings.Split(unquoted, "d")
+	if len(pieces) != 2 {
+		return fmt.Errorf("Invalid Dice spec %s, dice must be specified in the form XdY", unquoted)
+	}
+	num, err := strconv.Atoi(pieces[0])
+	if err != nil {
+		return fmt.Errorf("Invalid Dice spec %s, dice must be specified in the form XdY", unquoted)
+	}
+	size, err := strconv.Atoi(pieces[1])
+	if err != nil {
+		return fmt.Errorf("Invalid Dice spec %s, dice must be specified in the form XdY", unquoted)
+	}
+
+	this.Num = num
+	this.Size = size
+
+	return nil
 }
 
 type Creature struct {
@@ -123,19 +162,68 @@ func (this *CreatureBuilder) Build(skills []string, abilities []Ability) Creatur
 		panic("Unknown array: " + this.Array.Name)
 	}
 
-	// determine creatures skills
-	creature.AssignSkills(skills, this.MasterSkills, this.MasterSkillBonus, this.GoodSkills, this.GoodSkillBonus)
+	// determine creature attacks
+	creature.AssignAttacks(this.Array.AttackArray, this.Type.Adjustments.AttackBonus)
 
 	// determine creature abilities
 	creature.AssignAbilities(abilities, this.SpecialAbilities)
 
+	// determine creatures skills
+	creature.AssignSkills(skills, this.MasterSkills, this.MasterSkillBonus, this.GoodSkills, this.GoodSkillBonus)
+
 	return creature
+}
+
+func (this *Creature) AssignAttacks(attackArray AttackArray, bonus int) {
+    this.Melee = make(map[Attack]struct{})
+    this.Ranged = make(map[Attack]struct{})
+	attackMap := map[string]struct{}{
+		"Melee":  {},
+		"Ranged": {},
+	}
+
+	assignAttack := func(attackName string, attackBonus int) {
+		attackList := make([]string, 0, len(attackMap))
+		for attack := range attackMap {
+			attackList = append(attackList, attack)
+		}
+		attackType := GetOneOf(attackName+" attack: ", attackList)
+		switch attackType {
+		case "Melee":
+			attack := Attack{
+				AttackBonus: attackBonus + bonus,
+				DamageDice:  attackArray.Standard,
+				DamageType:  "Kinetic",
+			}
+			this.Melee[attack] = struct{}{}
+		case "Ranged":
+			var damageDice Dice
+            damageType := GetOneOf("Damage type: ", []string{"Kinetic", "Energy"})
+			switch damageType {
+			case "Kinetic":
+				damageDice = attackArray.Kinetic
+			case "Energy":
+				damageDice = attackArray.Energy
+			}
+			attack := Attack{
+				AttackBonus: attackBonus + bonus,
+				DamageDice:  damageDice,
+				DamageType:  damageType,
+			}
+			this.Ranged[attack] = struct{}{}
+		}
+		delete(attackMap, attackType)
+	}
+	assignAttack("Primary", attackArray.High)
+	attackMap["None"] = struct{}{}
+	assignAttack("Secondary", attackArray.Low)
 }
 
 func (this *Creature) AssignAbilities(abilities []Ability, numAbilities int) {
 	this.Senses = make(map[string]struct{})
 	this.Immunities = make(map[string]struct{})
 	this.Resistances = make(map[string]struct{})
+	this.Weaknesses = make(map[string]struct{})
 	this.OffensiveAbilities = make(map[string]struct{})
 	this.DefensiveAbilities = make(map[string]struct{})
 	this.SpecialAbilities = make(map[string]struct{})
@@ -158,6 +246,8 @@ func (this *Creature) AssignAbilities(abilities []Ability, numAbilities int) {
 			this.Immunities[ability.Name] = struct{}{}
 		case "RESIST":
 			this.Resistances[ability.Name] = struct{}{}
+		case "WEAKNESS":
+			this.Weaknesses[ability.Name] = struct{}{}
 		case "OFFENSE":
 			this.OffensiveAbilities[ability.Name] = struct{}{}
 		case "DEFENSE":
@@ -249,7 +339,7 @@ func (this *Creature) AssignAbilityScores(scores []int, primaryChoices []string,
 }
 
 type Attack struct {
-	Dice, DamageDie, DamageBonus int
-	AttackBonus                  int
-	DamageType                   string
+	DamageDice  Dice
+	AttackBonus int
+	DamageType  string
 }

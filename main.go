@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	arrays, err := LoadArrays("arrays.json")
+	arrays, err := LoadArrays("arrays.json", "attack_arrays.json")
 	if err != nil {
 		panic(err)
 	}
@@ -25,6 +25,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	spew.Dump(arrays)
 	builder := CreatureBuilder{}
 	builder.GetArrayType(arrays)
 	builder.GetType(types)
