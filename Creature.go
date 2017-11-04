@@ -1,13 +1,20 @@
 package main
 
-type Creature struct {
-	Array StatsArray
+type CreatureBuilder struct {
+	CR int
+	ArrayType string //TODO: enum this up
 	Type CreatureType
 	Abilities map[SpecialAbility]bool
 	Class CreatureClass
+
+}
+
+func (this* CreatureBuilder) getArray() StatsArray {
+}
+`
+type Creature struct {
 	Skills map[string]int
 	Spells map[Spell]int
-
 	CR double
 	XP int
 	Size string
@@ -42,7 +49,7 @@ type StatsArray struct {
 
 type CreatureType struct {
 	Subtype CreatureSubtype
-	
+
 	Name string
 	Senses map[string]bool
 	Abilities map[SpecialAbility]bool
@@ -50,7 +57,7 @@ type CreatureType struct {
 	Fort, Reflex, Will, RandomSave int
 	AttackBonus int
 	STR, DEX, CON, INT, WIS, CHA int
-	
+
 }
 
 type CreatureSubtype struct {
