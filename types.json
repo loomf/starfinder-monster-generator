@@ -1,0 +1,127 @@
+{
+	"types": [
+	{	"name": "Aberration",
+		"abilities": ["Darkvision"],
+		"adjustments": [{
+			"intelligence": [-4,-5],
+			"attackBonus": 0,
+			"fort": 0,
+			"reflex": 0,
+			"will": 2}
+		]
+	},
+	{	"name": "Animal",
+		"abilities": ["Darkvision"],
+		"adjustments": [{
+			"constitution": null,
+			"attackBonus": 0,
+			"fort": 2,
+			"reflex": 2,
+			"will": 0}
+		]
+	},
+	{	"name": "Construct",
+		"abilities": ["Darkvision", "Low-Light Vision", "Unliving", "Construct Immunities"],
+		"adjustments": [{
+			"constitution": null,
+			"attackBonus": 0,
+			"fort": 2,
+			"reflex": 2,
+			"will": 0}
+		]
+	},
+	{	"name": "Dragon",
+		"abilities": ["Darkvision", "Low-Light Vision", "Immunity Paralysis", "Immunity Sleep"],
+		"adjustments": [{
+			"attackBonus": 1,
+			"fort": 2,
+			"reflex": 2,
+			"will": 2}
+		]
+	},
+	{	"name": "Fey",
+		"abilities": ["Low-Light Vision"],
+		"adjustments": [{
+			"attackBonus": -1,
+			"fort": 2,
+			"reflex": 2,
+			"will": 0}
+		]
+	},
+	{	"name": "Humanoid",
+		"abilities": ["Low-Light Vision"],
+		"adjustments": [{
+			"attackBonus": 0,
+			"TODO": "Only one of these should be 2",			
+			"fort": 2,
+			"reflex": 2,
+			"will": 2}
+		]
+	},
+	{	"name": "Magical Beast",
+		"abilities": ["Darkvision", "Low-Light Vision"],
+		"adjustments": [{
+			"attackBonus": 1,
+			"fort": 2,
+			"reflex": 2,
+			"will": 0}
+		]
+	},
+	{	"name": "Monstrous Humanoid",
+		"abilities": ["Darkvision", "Low-Light Vision"],
+		"adjustments": [{
+			"attackBonus": 1,
+			"fort": 0,
+			"reflex": 2,
+			"will": 2}
+		]
+	},
+	{	"name": "Ooze",
+		"abilities": ["Blindsight", "Mindless", "Sightless", "Ooze Immunities"],
+		"adjustments": [{
+			"attackBonus": 0,
+			"fort": 2,
+			"reflex": -2,
+			"will": -2}
+		]
+	},
+	{	"name": "Outsider",
+		"abilities": ["Darkvision"],
+		"adjustments": [{
+			"attackBonus": 1,
+			"TODO": "Only one of these should be 2",
+			"fort": 2,
+			"reflex": 2,
+			"will": 2}
+		]
+	},
+	{	"name": "Plant",
+		"abilities": ["Low-Light Vision", "Plant Immunities"],
+		"adjustments": [{
+			"attackBonus": 0,
+			"fort": 2,
+			"reflex": 0,
+			"will": 0}
+		]
+	},
+	{	"name": "Undead",
+		"abilities": ["Darkvision", "Unliving", "Undead Immunities"],
+		"adjustments": [{
+			"attackBonus": 0,
+			"fort": 0,
+			"reflex": 0,
+			"will": 2}
+		]
+	},
+	{	"name": "Vermin",
+		"abilities": ["Darkvision", "Mindless"],
+		"adjustments": [{
+			"attackBonus": 0,
+			"fort": 2,
+			"reflex": 0,
+			"will": 0}
+		]
+	}
+]
+}
+

@@ -1,0 +1,43 @@
+{
+	"types": [
+	{	"name": "Aeon",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Agathion",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Air",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Android",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Angel",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Aquatic",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Archon",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+
+
+
+]
+}
+
