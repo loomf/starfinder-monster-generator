@@ -1,43 +1,260 @@
 {
 	"types": [
 	{	"name": "Aeon",
-		"abilities": [""],
+		"abilities": ["Telepathy", "Immunity Cold", "Immunity Critical Hits", "Immunity Poison", "Extension of All", "Resist Electricity 10", "Resist Fire 10"],
 		"skills": [""],
 		"speed": [""]
 	},
 	{	"name": "Agathion",
-		"abilities": [""],
+		"abilities": ["Low-Light Vision", "Immunity Electricity", "Immunity Petrification", "Channel Healing", "Resist Cold 10", "Resist Sonic 10", "Saving Throw Poison 4"],
 		"skills": [""],
 		"speed": [""]
 	},
 	{	"name": "Air",
 		"abilities": [""],
-		"skills": [""],
-		"speed": [""]
+		"skills": [{"Acrobatics": "master"}],
+		"speed": ["Fly (Perfect)"]
 	},
 	{	"name": "Android",
-		"abilities": [""],
+		"abilities": ["Darkvision", "Low-Light Vision", "Constructed", "Flat Affect", "Upgrade Slot"],
 		"skills": [""],
 		"speed": [""]
 	},
 	{	"name": "Angel",
-		"abilities": [""],
+		"abilities": ["Darkvision", "Low-Light Vision", "Immunity Acid", "Immunity Cold", "Immunity Petrification", "Truespeech", "Protective Aura", "Saving Throw Poison 4", "Resist Electricity 10", "Resist Fire 10"],
 		"skills": [""],
 		"speed": [""]
 	},
 	{	"name": "Aquatic",
-		"abilities": [""],
-		"skills": [""],
-		"speed": [""]
+		"abilities": ["Water Breathing", "Amphibious"],
+		"skills": [{"Athletics":"master"}],
+		"speed": ["Swim"]
 	},
 	{	"name": "Archon",
+		"abilities": ["Darkvision", "Immunity Electricity", "Immunity Petrification", "Truespeech", "Teleport", "Aura of Menace", "Saving Throw Poison 4"],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Azata",
 		"abilities": [""],
 		"skills": [""],
 		"speed": [""]
 	},
-
-
-
+	{	"name": "Cold",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Daemon",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	
+	{	"name": "Demon",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Devil",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Dwarf",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Drow",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Earth",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Elemental",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Elf",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Fire",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Gnome",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Goblinoid",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Gray",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Halfling",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Human",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Ikeshti",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Incorporeal",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Inevitable",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Kasatha",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Lashunta",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Maraquoi",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Orc",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Plantlike",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Protean",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Reptoid",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Ryphorian",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Sarcesian",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Shapechanger",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Shirren",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Skittermander",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Swarm",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Verthani",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Vesk",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Water",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Ysoki",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Chaotic",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Evil",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Extraplanar",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Good",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Lawful",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Magical",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Native",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	},
+	{	"name": "Technological",
+		"abilities": [""],
+		"skills": [""],
+		"speed": [""]
+	}
 ]
 }
-
