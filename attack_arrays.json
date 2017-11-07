@@ -1,0 +1,737 @@
+{
+"Combatant": [
+   "1": {
+      "HIGH": 8,
+      "LOW": 5,
+      "ENERGY": "1d4+1",
+      "KINETIC": "1d6+1",
+      "STANDARD": "1d6+1+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "2": {
+      "HIGH": 10,
+      "LOW": 7,
+      "ENERGY": "1d4+2",
+      "KINETIC": "1d6+2",
+      "STANDARD": "1d6+2+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "3": {
+      "HIGH": 11,
+      "LOW": 8,
+      "ENERGY": "1d4+3",
+      "KINETIC": "1d6+3",
+      "STANDARD": "1d6+3+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "4": {
+      "HIGH": 12,
+      "LOW": 9,
+      "ENERGY": "1d4+4",
+      "KINETIC": "1d6+4",
+      "STANDARD": "1d6+4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "5": {
+      "HIGH": 14,
+      "LOW": 11,
+      "ENERGY": "1d6+5",
+      "KINETIC": "1d8+5",
+      "STANDARD": "1d6+5+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "6": {
+      "HIGH": 16,
+      "LOW": 13,
+      "ENERGY": "1d10+6",
+      "KINETIC": "2d6+6",
+      "STANDARD": "1d8+6+Str",
+      "THREE ATTACKS": "1d4+6+Str",
+      "FOUR ATTACKS": "—"
+   },
+   "7": {
+      "HIGH": 17,
+      "LOW": 14,
+      "ENERGY": "2d6+7",
+      "KINETIC": "2d8+7",
+      "STANDARD": "2d6+7+Str",
+      "THREE ATTACKS": "1d8+7+Str",
+      "FOUR ATTACKS": "1d6+7+Str"
+   },
+   "8": {
+      "HIGH": 19,
+      "LOW": 16,
+      "ENERGY": "2d8+8",
+      "KINETIC": "3d6+8",
+      "STANDARD": "3d4+8+Str",
+      "THREE ATTACKS": "1d10+8+Str",
+      "FOUR ATTACKS": "1d6+8+Str"
+   },
+   "9": {
+      "HIGH": 21,
+      "LOW": 18,
+      "ENERGY": "3d6+9",
+      "KINETIC": "5d4+9",
+      "STANDARD": "2d10+9+Str",
+      "THREE ATTACKS": "2d6+9+Str",
+      "FOUR ATTACKS": "1d10+9+Str"
+   },
+   "10": {
+      "HIGH": 22,
+      "LOW": 19,
+      "ENERGY": "2d10+10",
+      "KINETIC": "4d6+10",
+      "STANDARD": "2d10+10+Str",
+      "THREE ATTACKS": "3d4+10+Str",
+      "FOUR ATTACKS": "1d10+10+Str"
+   },
+   "11": {
+      "HIGH": 23,
+      "LOW": 20,
+      "ENERGY": "3d8+11",
+      "KINETIC": "3d10+11",
+      "STANDARD": "4d6+11+Str",
+      "THREE ATTACKS": "2d8+11+Str",
+      "FOUR ATTACKS": "2d6+11+Str"
+   },
+   "12": {
+      "HIGH": 25,
+      "LOW": 22,
+      "ENERGY": "6d4+12",
+      "KINETIC": "4d8+12",
+      "STANDARD": "6d4+12+Str",
+      "THREE ATTACKS": "3d6+12+Str",
+      "FOUR ATTACKS": "3d4+12+Str"
+   },
+   "13": {
+      "HIGH": 26,
+      "LOW": 23,
+      "ENERGY": "5d6+13",
+      "KINETIC": "6d6+13",
+      "STANDARD": "3d12+13+Str",
+      "THREE ATTACKS": "2d12+13+Str",
+      "FOUR ATTACKS": "2d8+13+Str"
+   },
+   "14": {
+      "HIGH": 27,
+      "LOW": 24,
+      "ENERGY": "3d12+14",
+      "KINETIC": "5d10+14",
+      "STANDARD": "8d6+14+Str",
+      "THREE ATTACKS": "4d8+14+Str",
+      "FOUR ATTACKS": "4d6+14+Str"
+   },
+   "15": {
+      "HIGH": 28,
+      "LOW": 25,
+      "ENERGY": "5d8+15",
+      "KINETIC": "8d6+15",
+      "STANDARD": "8d6+15+Str",
+      "THREE ATTACKS": "3d12+15+Str",
+      "FOUR ATTACKS": "6d4+15+Str"
+   },
+   "16": {
+      "HIGH": 30,
+      "LOW": 27,
+      "ENERGY": "7d6+16",
+      "KINETIC": "6d10+16",
+      "STANDARD": "6d10+16+Str",
+      "THREE ATTACKS": "5d8+16+Str",
+      "FOUR ATTACKS": "3d10+16+Str"
+   },
+   "17": {
+      "HIGH": 31,
+      "LOW": 28,
+      "ENERGY": "8d6+17",
+      "KINETIC": "6d12+17",
+      "STANDARD": "6d12+17+Str",
+      "THREE ATTACKS": "4d12+17+Str",
+      "FOUR ATTACKS": "3d12+17+Str"
+   },
+   "18": {
+      "HIGH": 32,
+      "LOW": 29,
+      "ENERGY": "6d10+18",
+      "KINETIC": "8d10+18",
+      "STANDARD": "13d6+18+Str",
+      "THREE ATTACKS": "8d6+18+Str",
+      "FOUR ATTACKS": "5d8+18+Str"
+   },
+   "19": {
+      "HIGH": 33,
+      "LOW": 30,
+      "ENERGY": "8d8+19",
+      "KINETIC": "9d10+19",
+      "STANDARD": "15d6+19+Str",
+      "THREE ATTACKS": "6d10+19+Str",
+      "FOUR ATTACKS": "4d12+19+Str"
+   },
+   "20": {
+      "HIGH": 34,
+      "LOW": 31,
+      "ENERGY": "12d6+20",
+      "KINETIC": "16d6+20",
+      "STANDARD": "11d10+20+Str",
+      "THREE ATTACKS": "6d12+20+Str",
+      "FOUR ATTACKS": "8d6+20+Str"
+   },
+   "21": {
+      "HIGH": 35,
+      "LOW": 32,
+      "ENERGY": "13d6+21",
+      "KINETIC": "18d6+21",
+      "STANDARD": "12d10+21+Str",
+      "THREE ATTACKS": "8d10+21+Str",
+      "FOUR ATTACKS": "6d10+21+Str"
+   },
+   "22": {
+      "HIGH": 36,
+      "LOW": 33,
+      "ENERGY": "12d8+22",
+      "KINETIC": "20d6+22",
+      "STANDARD": "21d6+22+Str",
+      "THREE ATTACKS": "9d10+22+Str",
+      "FOUR ATTACKS": "8d8+22+Str"
+   },
+   "23": {
+      "HIGH": 37,
+      "LOW": 34,
+      "ENERGY": "17d6+23",
+      "KINETIC": "14d10+23",
+      "STANDARD": "24d6+23+Str",
+      "THREE ATTACKS": "10d10+23+Str",
+      "FOUR ATTACKS": "12d6+23+Str"
+   },
+   "24": {
+      "HIGH": 39,
+      "LOW": 36,
+      "ENERGY": "10d12+24",
+      "KINETIC": "19d8+24",
+      "STANDARD": "14d12+24+Str",
+      "THREE ATTACKS": "11d10+24+Str",
+      "FOUR ATTACKS": "13d6+24+Str"
+   },
+   "25": {
+      "HIGH": 40,
+      "LOW": 37,
+      "ENERGY": "13d10+25",
+      "KINETIC": "14d12+25",
+      "STANDARD": "18d10+25+Str",
+      "THREE ATTACKS": "12d10+25+Str",
+      "FOUR ATTACKS": "9d10+25+Str"
+   },
+   "1/3": {
+      "HIGH": 4,
+      "LOW": 1,
+      "ENERGY": "1d4",
+      "KINETIC": "1d4",
+      "STANDARD": "1d6+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "1/2": {
+      "HIGH": 6,
+      "LOW": 3,
+      "ENERGY": "1d4",
+      "KINETIC": "1d6",
+      "STANDARD": "1d6+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   }
+],
+"Expert": [
+   "1": {
+      "HIGH": 6,
+      "LOW": 4,
+      "ENERGY": "1d4+1",
+      "KINETIC": "1d4+1",
+      "STANDARD": "1d4+1+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "2": {
+      "HIGH": 8,
+      "LOW": 6,
+      "ENERGY": "1d4+2",
+      "KINETIC": "1d4+2",
+      "STANDARD": "1d4+2+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "3": {
+      "HIGH": 9,
+      "LOW": 7,
+      "ENERGY": "1d4+3",
+      "KINETIC": "1d4+3",
+      "STANDARD": "1d4+3+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "4": {
+      "HIGH": 10,
+      "LOW": 8,
+      "ENERGY": "1d4+4",
+      "KINETIC": "1d4+4",
+      "STANDARD": "1d4+4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "5": {
+      "HIGH": 12,
+      "LOW": 10,
+      "ENERGY": "1d4+5",
+      "KINETIC": "1d6+5",
+      "STANDARD": "1d4+5+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "6": {
+      "HIGH": 14,
+      "LOW": 12,
+      "ENERGY": "1d6+6",
+      "KINETIC": "1d8+6",
+      "STANDARD": "1d6+6+Str",
+      "THREE ATTACKS": "1d4+6+Str",
+      "FOUR ATTACKS": "—"
+   },
+   "7": {
+      "HIGH": 15,
+      "LOW": 13,
+      "ENERGY": "1d8+7",
+      "KINETIC": "1d12+7",
+      "STANDARD": "1d8+7+Str",
+      "THREE ATTACKS": "1d4+7+Str",
+      "FOUR ATTACKS": "1d4+7+Str"
+   },
+   "8": {
+      "HIGH": 17,
+      "LOW": 15,
+      "ENERGY": "1d10+8",
+      "KINETIC": "2d6+8",
+      "STANDARD": "1d12+8+Str",
+      "THREE ATTACKS": "1d8+8+Str",
+      "FOUR ATTACKS": "1d4+8+Str"
+   },
+   "9": {
+      "HIGH": 19,
+      "LOW": 17,
+      "ENERGY": "2d6+9",
+      "KINETIC": "2d8+9",
+      "STANDARD": "3d4+9+Str",
+      "THREE ATTACKS": "1d10+9+Str",
+      "FOUR ATTACKS": "1d6+9+Str"
+   },
+   "10": {
+      "HIGH": 20,
+      "LOW": 18,
+      "ENERGY": "3d4+10",
+      "KINETIC": "2d8+10",
+      "STANDARD": "2d8+10+Str",
+      "THREE ATTACKS": "1d10+10+Str",
+      "FOUR ATTACKS": "1d8+10+Str"
+   },
+   "11": {
+      "HIGH": 21,
+      "LOW": 19,
+      "ENERGY": "2d8+11",
+      "KINETIC": "2d10+11",
+      "STANDARD": "2d10+11+Str",
+      "THREE ATTACKS": "3d4+11+Str",
+      "FOUR ATTACKS": "1d10+11+Str"
+   },
+   "12": {
+      "HIGH": 23,
+      "LOW": 21,
+      "ENERGY": "2d8+12",
+      "KINETIC": "2d10+12",
+      "STANDARD": "2d12+12+Str",
+      "THREE ATTACKS": "3d4+12+Str",
+      "FOUR ATTACKS": "1d12+12+Str"
+   },
+   "13": {
+      "HIGH": 24,
+      "LOW": 22,
+      "ENERGY": "2d10+13",
+      "KINETIC": "4d6+13",
+      "STANDARD": "6d4+13+Str",
+      "THREE ATTACKS": "3d6+13+Str",
+      "FOUR ATTACKS": "3d4+13+Str"
+   },
+   "14": {
+      "HIGH": 25,
+      "LOW": 23,
+      "ENERGY": "5d4+14",
+      "KINETIC": "4d8+14",
+      "STANDARD": "6d6+14+Str",
+      "THREE ATTACKS": "4d6+14+Str",
+      "FOUR ATTACKS": "3d6+14+Str"
+   },
+   "15": {
+      "HIGH": 26,
+      "LOW": 24,
+      "ENERGY": "4d6+15",
+      "KINETIC": "6d6+15",
+      "STANDARD": "5d8+15+Str",
+      "THREE ATTACKS": "6d4+15+Str",
+      "FOUR ATTACKS": "2d10+15+Str"
+   },
+   "16": {
+      "HIGH": 28,
+      "LOW": 26,
+      "ENERGY": "6d4+16",
+      "KINETIC": "5d8+16",
+      "STANDARD": "6d8+16+Str",
+      "THREE ATTACKS": "4d8+16+Str",
+      "FOUR ATTACKS": "3d8+16+Str"
+   },
+   "17": {
+      "HIGH": 29,
+      "LOW": 27,
+      "ENERGY": "4d8+17",
+      "KINETIC": "4d12+17",
+      "STANDARD": "8d6+17+Str",
+      "THREE ATTACKS": "3d12+17+Str",
+      "FOUR ATTACKS": "6d4+17+Str"
+   },
+   "18": {
+      "HIGH": 30,
+      "LOW": 28,
+      "ENERGY": "3d12+18",
+      "KINETIC": "8d6+18",
+      "STANDARD": "8d8+18+Str",
+      "THREE ATTACKS": "5d8+18+Str",
+      "FOUR ATTACKS": "4d8+18+Str"
+   },
+   "19": {
+      "HIGH": 31,
+      "LOW": 29,
+      "ENERGY": "5d8+19",
+      "KINETIC": "6d10+19",
+      "STANDARD": "9d8+19+Str",
+      "THREE ATTACKS": "6d8+19+Str",
+      "FOUR ATTACKS": "3d12+19+Str"
+   },
+   "20": {
+      "HIGH": 32,
+      "LOW": 30,
+      "ENERGY": "4d12+20",
+      "KINETIC": "8d8+20",
+      "STANDARD": "13d6+20+Str",
+      "THREE ATTACKS": "9d6+20+Str",
+      "FOUR ATTACKS": "5d8+20+Str"
+   },
+   "21": {
+      "HIGH": 33,
+      "LOW": 31,
+      "ENERGY": "8d6+21",
+      "KINETIC": "6d12+21",
+      "STANDARD": "15d6+21+Str",
+      "THREE ATTACKS": "10d6+21+Str",
+      "FOUR ATTACKS": "4d12+21+Str"
+   },
+   "22": {
+      "HIGH": 34,
+      "LOW": 32,
+      "ENERGY": "6d10+22",
+      "KINETIC": "8d10+22",
+      "STANDARD": "17d6+22+Str",
+      "THREE ATTACKS": "6d12+22+Str",
+      "FOUR ATTACKS": "8d6+22+Str"
+   },
+   "23": {
+      "HIGH": 35,
+      "LOW": 33,
+      "ENERGY": "8d8+23",
+      "KINETIC": "13d6+23",
+      "STANDARD": "12d10+23+Str",
+      "THREE ATTACKS": "8d10+23+Str",
+      "FOUR ATTACKS": "6d10+23+Str"
+   },
+   "24": {
+      "HIGH": 37,
+      "LOW": 35,
+      "ENERGY": "9d8+24",
+      "KINETIC": "15d6+24",
+      "STANDARD": "21d6+24+Str",
+      "THREE ATTACKS": "9d10+24+Str",
+      "FOUR ATTACKS": "8d8+24+Str"
+   },
+   "25": {
+      "HIGH": 38,
+      "LOW": 36,
+      "ENERGY": "8d10+25",
+      "KINETIC": "16d6+25",
+      "STANDARD": "12d12+25+Str",
+      "THREE ATTACKS": "15d6+25+Str",
+      "FOUR ATTACKS": "6d12+25+Str"
+   },
+   "1/3": {
+      "HIGH": 2,
+      "LOW": 0,
+      "ENERGY": "1d4",
+      "KINETIC": "1d4",
+      "STANDARD": "1d4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "1/2": {
+      "HIGH": 4,
+      "LOW": 2,
+      "ENERGY": "1d4",
+      "KINETIC": "1d4",
+      "STANDARD": "1d4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   }
+],
+"Spellcaster": [
+   "1": {
+      "HIGH": 4,
+      "LOW": "+2",
+      "ENERGY": "1d4+1",
+      "KINETIC": "1d4+1",
+      "STANDARD": "1d4+1+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "2": {
+      "HIGH": 6,
+      "LOW": "+4",
+      "ENERGY": "1d4+2",
+      "KINETIC": "1d4+2",
+      "STANDARD": "1d4+2+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "3": {
+      "HIGH": 7,
+      "LOW": "+5",
+      "ENERGY": "1d4+3",
+      "KINETIC": "1d4+3",
+      "STANDARD": "1d4+3+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "4": {
+      "HIGH": 8,
+      "LOW": "+6",
+      "ENERGY": "1d4+4",
+      "KINETIC": "1d4+4",
+      "STANDARD": "1d4+4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "5": {
+      "HIGH": 10,
+      "LOW": "+8",
+      "ENERGY": "1d4+5",
+      "KINETIC": "1d6+5",
+      "STANDARD": "1d4+5+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "6": {
+      "HIGH": 12,
+      "LOW": "+10",
+      "ENERGY": "1d6+6",
+      "KINETIC": "1d8+6",
+      "STANDARD": "1d6+6+Str",
+      "THREE ATTACKS": "1d4+6+Str",
+      "FOUR ATTACKS": "—"
+   },
+   "7": {
+      "HIGH": 13,
+      "LOW": "+11",
+      "ENERGY": "1d8+7",
+      "KINETIC": "1d12+7",
+      "STANDARD": "1d8+7+Str",
+      "THREE ATTACKS": "1d4+7+Str",
+      "FOUR ATTACKS": "1d4+7+Str"
+   },
+   "8": {
+      "HIGH": 15,
+      "LOW": "+13",
+      "ENERGY": "1d10+8",
+      "KINETIC": "2d6+8",
+      "STANDARD": "1d12+8+Str",
+      "THREE ATTACKS": "1d8+8+Str",
+      "FOUR ATTACKS": "1d4+8+Str"
+   },
+   "9": {
+      "HIGH": 17,
+      "LOW": "+15",
+      "ENERGY": "2d6+9",
+      "KINETIC": "2d8+9",
+      "STANDARD": "3d4+9+Str",
+      "THREE ATTACKS": "1d10+9+Str",
+      "FOUR ATTACKS": "1d6+9+Str"
+   },
+   "10": {
+      "HIGH": 18,
+      "LOW": "+16",
+      "ENERGY": "3d4+10",
+      "KINETIC": "2d8+10",
+      "STANDARD": "2d8+10+Str",
+      "THREE ATTACKS": "1d10+10+Str",
+      "FOUR ATTACKS": "1d8+10+Str"
+   },
+   "11": {
+      "HIGH": 19,
+      "LOW": "+17",
+      "ENERGY": "2d8+11",
+      "KINETIC": "2d10+11",
+      "STANDARD": "2d10+11+Str",
+      "THREE ATTACKS": "3d4+11+Str",
+      "FOUR ATTACKS": "1d10+11+Str"
+   },
+   "12": {
+      "HIGH": 21,
+      "LOW": "+19",
+      "ENERGY": "2d8+12",
+      "KINETIC": "2d10+12",
+      "STANDARD": "2d12+12+Str",
+      "THREE ATTACKS": "3d4+12+Str",
+      "FOUR ATTACKS": "1d12+12+Str"
+   },
+   "13": {
+      "HIGH": 22,
+      "LOW": "+20",
+      "ENERGY": "2d10+13",
+      "KINETIC": "4d6+13",
+      "STANDARD": "6d4+13+Str",
+      "THREE ATTACKS": "3d6+13+Str",
+      "FOUR ATTACKS": "3d4+13+Str"
+   },
+   "14": {
+      "HIGH": 23,
+      "LOW": "+21",
+      "ENERGY": "5d4+14",
+      "KINETIC": "4d8+14",
+      "STANDARD": "6d6+14+Str",
+      "THREE ATTACKS": "4d6+14+Str",
+      "FOUR ATTACKS": "3d6+14+Str"
+   },
+   "15": {
+      "HIGH": 24,
+      "LOW": "+22",
+      "ENERGY": "4d6+15",
+      "KINETIC": "6d6+15",
+      "STANDARD": "5d8+15+Str",
+      "THREE ATTACKS": "6d4+15+Str",
+      "FOUR ATTACKS": "2d10+15+Str"
+   },
+   "16": {
+      "HIGH": 26,
+      "LOW": "+24",
+      "ENERGY": "6d4+16",
+      "KINETIC": "5d8+16",
+      "STANDARD": "6d8+16+Str",
+      "THREE ATTACKS": "4d8+16+Str",
+      "FOUR ATTACKS": "3d8+16+Str"
+   },
+   "17": {
+      "HIGH": 27,
+      "LOW": "+25",
+      "ENERGY": "4d8+17",
+      "KINETIC": "4d12+17",
+      "STANDARD": "8d6+17+Str",
+      "THREE ATTACKS": "3d12+17+Str",
+      "FOUR ATTACKS": "6d4+17+Str"
+   },
+   "18": {
+      "HIGH": 28,
+      "LOW": "+26",
+      "ENERGY": "3d12+18",
+      "KINETIC": "8d6+18",
+      "STANDARD": "8d8+18+Str",
+      "THREE ATTACKS": "5d8+18+Str",
+      "FOUR ATTACKS": "4d8+18+Str"
+   },
+   "19": {
+      "HIGH": 29,
+      "LOW": "+27",
+      "ENERGY": "5d8+19",
+      "KINETIC": "6d10+19",
+      "STANDARD": "9d8+19+Str",
+      "THREE ATTACKS": "6d8+19+Str",
+      "FOUR ATTACKS": "3d12+19+Str"
+   },
+   "20": {
+      "HIGH": 30,
+      "LOW": "+28",
+      "ENERGY": "4d12+20",
+      "KINETIC": "8d8+20",
+      "STANDARD": "13d6+20+Str",
+      "THREE ATTACKS": "9d6+20+Str",
+      "FOUR ATTACKS": "5d8+20+Str"
+   },
+   "21": {
+      "HIGH": 31,
+      "LOW": "+29",
+      "ENERGY": "8d6+21",
+      "KINETIC": "6d12+21",
+      "STANDARD": "15d6+21+Str",
+      "THREE ATTACKS": "10d6+21+Str",
+      "FOUR ATTACKS": "4d12+21+Str"
+   },
+   "22": {
+      "HIGH": 32,
+      "LOW": "+30",
+      "ENERGY": "6d10+22",
+      "KINETIC": "8d10+22",
+      "STANDARD": "17d6+22+Str",
+      "THREE ATTACKS": "6d12+22+Str",
+      "FOUR ATTACKS": "8d6+22+Str"
+   },
+   "23": {
+      "HIGH": 33,
+      "LOW": "+31",
+      "ENERGY": "8d8+23",
+      "KINETIC": "13d6+23",
+      "STANDARD": "12d10+23+Str",
+      "THREE ATTACKS": "8d10+23+Str",
+      "FOUR ATTACKS": "6d10+23+Str"
+   },
+   "24": {
+      "HIGH": 35,
+      "LOW": "+33",
+      "ENERGY": "9d8+24",
+      "KINETIC": "15d6+24",
+      "STANDARD": "21d6+24+Str",
+      "THREE ATTACKS": "9d10+24+Str",
+      "FOUR ATTACKS": "8d8+24+Str"
+   },
+   "25": {
+      "HIGH": 36,
+      "LOW": "+34",
+      "ENERGY": "8d10+25",
+      "KINETIC": "16d6+25",
+      "STANDARD": "12d12+25+Str",
+      "THREE ATTACKS": "15d6+25+Str",
+      "FOUR ATTACKS": "6d12+25+Str"
+   },
+   "1/3": {
+      "HIGH": 0,
+      "LOW": "–2",
+      "ENERGY": "1d4",
+      "KINETIC": "1d4",
+      "STANDARD": "1d4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   },
+   "1/2": {
+      "HIGH": 2,
+      "LOW": "+0",
+      "ENERGY": "1d4",
+      "KINETIC": "1d4",
+      "STANDARD": "1d4+Str",
+      "THREE ATTACKS": "—",
+      "FOUR ATTACKS": "—"
+   }
+]
+}
