@@ -1,0 +1,6 @@
+{
+	"outsider": ["Aeon", "Agathion", "Air", "Angel", "Archon", "Azata", "Cold", "Daemon", "Demon", "Devil", "Earth", "Elemental", "Fire", "Inevitable", "Water"],
+	"humanoid": ["Android", "Aquatic", "Dwarf", "Drow", "Elf", "Giant", "Gnome", "Goblinoid", "Gray", "Halfling", "Human", "Ikeshti", "Kasatha", "Lashunta", "Maraqoi", "Orc", "Plantlike", "Protean", "Reptoid", "Ryphorian", "Sarcesian", "Shapechanger", "Shirren", "Skittermander", "Swarm", "Verthani", "Vesk", "Ysoki"],
+	"construct": ["Inevitable", "Magical", "Technological"],
+	"other": ["Air", "Aquatic", "Cold", "Earth", "Fire", "Incorporeal", "Shapechanger", "Water"]
+}
