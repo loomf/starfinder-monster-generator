@@ -1,51 +1,46 @@
 package main
 
+import (
+)
+
 type CreatureBuilder struct {
-	ArrayConfig
-	TypeConfig
-	SubtypeConfig
-
-	Creature
+	Array
+	Type
+	Subtype
 }
 
-type Config interface {
-	Apply(*CreatureBuilder)
+func (this *CreatureBuilder) GetArrayType(arrayMap map[string](map[string]Array)) {
+	arrayTypes := make([]string, 0, len(arrayMap))
+	for k := range arrayMap {
+		arrayTypes = append(arrayTypes, k)
+	}
+	arrayType := GetOneOf("Array Type: ", arrayTypes)
+
+    crMap := arrayMap[arrayType]
+    crs := make([]string, 0, len(crMap))
+    for k := range crMap {
+        crs = append(crs, k)
+    }
+    cr := GetOneOf("CR: ", crs)
+    this.Array = crMap[cr]
 }
 
-type ArrayConfig struct {
-	CR int
-	ArrayType string //TODO: enum this up
+func (this *CreatureBuilder) GetType(types []Type) {
+	typeNames := make([]string, len(types))
+	typeMap := make(map[string]Type, len(types))
+	for i, v := range types {
+		typeNames[i] = v.Name
+		typeMap[v.Name] = v
+	}
+	this.Type = typeMap[GetOneOf("Type: ", typeNames)]
 }
 
-func (config ArrayConfig) Apply(builder *CreatureBuilder) {
-	builder.ArrayConfig = config
-	array := LookupArray(config)
-	// TODO: copy StatsArray into corresponding spots in builder.Creature
-}
-
-func LookupArray(config ArrayConfig) StatsArray {
-	// TODO: use CR and ArrayType
-}
-
-type TypeConfig struct {
-	Name string
-	Adjustments
-	Abilities map[Ability]struct{}
-}
-
-func (config TypeConfig) Apply(builder *CreatureBuilder) {
-	builder.TypeConfig = config
-	// TODO: apply adjustment modifiers to creature
-}
-
-type SubtypeConfig struct {
-	Name string
-	Abilities map[Ability]struct{}
-	Skills string //TODO: figure out how to handle the options here
-	Speed map[string]bool
-}
-
-func (config SubtypeConfig) Apply(builder *CreatureBuilder) {
-	builder.SubtypeConfig = config
-	config.Adjustments.Adjust(&builder.Array)
+func (this *CreatureBuilder) GetSubtype(subtypes []Subtype) {
+	subtypeNames := make([]string, len(subtypes))
+	subtypeMap := make(map[string]Subtype, len(subtypes))
+	for i, v := range subtypes {
+		subtypeNames[i] = v.Name
+		subtypeMap[v.Name] = v
+	}
+	this.Subtype = subtypeMap[GetOneOf("Subtype: ", subtypeNames)]
 }
