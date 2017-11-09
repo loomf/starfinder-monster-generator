@@ -1,0 +1,183 @@
+{
+	"abilities": [{
+		"name": "Telepathy",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Extension of All",
+		"description": "",
+		"type": "SPECIAL"
+	},
+	{
+		"name": "Resist Electricity 10",
+		"description": "",
+		"type": "RESIST"
+	},
+	{
+		"name": "Resist Fire 10",
+		"description": "",
+		"type": "RESIST"
+	},
+	{
+		"name": "Channel Healing",
+		"description": "",
+		"type": "SPECIAL"
+	},
+	{
+		"name": "Resist Cold 10",
+		"description": "",
+		"type": "RESIST"
+	},
+	{
+		"name": "Resist Sonic 10",
+		"description": "",
+		"type": "RESIST"
+	},
+	{
+		"name": "Saving Throw Poison 4",
+		"description": "",
+		"type": "DEFENSE"
+	},
+	{
+		"name": "Low-Light Vision",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Constructed",
+		"description": "",
+			"type": "RESIST"
+	},
+	{
+		"name": "Flat Affect",
+		"description": "",
+		"type": "WEAKNESS"
+	},
+	{
+		"name": "Upgrade Slot",
+		"description": "",
+		"type": "OTHER"
+	},
+	{
+		"name": "Truespeech",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Protective Aura",
+		"description": "",
+		"type": "SPECIAL"
+	},
+	{
+		"name": "Water Breathing",
+		"description": "",
+		"type": "OTHER"
+	},
+	{
+		"name": "Amphibious",
+		"description": "",
+		"type": "OTHER"
+	},
+	{
+		"name": "Darkvision",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Truespeech",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Teleport",
+		"description": "",
+		"type": "SPECIAL"
+	},
+	{
+		"name": "Aura of Menace",
+		"description": "",
+		"type": "SPECIAL"
+	},
+	{
+		"name": "Unliving",
+		"description": "",
+		"type": "OTHER"
+	},
+	{
+		"name": "Blindsight",
+		"description": "",
+		"type": "SENSE"
+	},
+	{
+		"name": "Mindless",
+		"description": "",
+		"type": "WEAKNESS"
+	},
+	{
+		"name": "Sightless",
+		"description": "",
+		"type": "WEAKNESS"
+	},
+	{
+		"name": "Immunity Cold",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Critical Hits",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Poison",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name":"Immunity Paralysis",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Sleep",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Electricity",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Petrification",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Immunity Acid",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Construct Immunities",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Ooze Immunities",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Plant Immunities",
+		"description": "",
+		"type": "IMMUNITY"
+	},
+	{
+		"name": "Undead Immunities",
+		"description": "",
+		"type": "IMMUNITY"
+	}
+]}
+
