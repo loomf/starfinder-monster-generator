@@ -96,218 +96,224 @@
     },
     {
       "name": "Azata",
-      "abilities": [],
+      "abilities": ["Darkvision", "Truespeech", "Low-light Vision", "Immunity Electricity", "Immunity Petrification", "Resist Cold 10", "Resist Fire 10"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Cold",
-      "abilities": [],
+      "abilities": ["Immunity Cold", "Vulnerability Fire"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Daemon",
-      "abilities": [],
+      "abilities": ["Immunity Acid", "Immunity Death", "Immunity Disease", "Immunity Poison", "Resist Cold 10", "Resist Electricity 10", "Resist Fire 10", "Summon Allies", "Telepathy"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Demon",
-      "abilities": [],
+      "abilities": ["Immunity Electricity", "Immunity Poison", "Resist Acid 10", "Resist Cold 10", "Resist Fire 10", "Summon Allies", "Telepathy"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Devil",
-      "abilities": [],
+      "abilities": ["See In Darkness", "Immunity Fire", "Immunity Poison", "Resist Acid 10", "Resist Cold 10", "Summon Allies", "Telepathy"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Dwarf",
-      "abilities": [],
+      "abilities": ["Darkvision", "Slow But Steady", "Stonecunning", "Traditional Enemies", "Weapon Familiarity"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Drow",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Darkvision", "Drow Immunities", "Drow Magic", "Light Blindness"],
+      "skills": {"Perception": "Master"},
       "speed": []
     },
     {
       "name": "Earth",
-      "abilities": [],
+      "abilities": ["Blindsense", "Blindsight (vibration)"],
       "skills": {},
-      "speed": []
+      "speed": ["Burrow"]
     },
     {
       "name": "Elemental",
-      "abilities": [],
+      "abilities": ["Elemental Immunities"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Elf",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Low-Light Vision", "Elven Immunities", "Elven Magic"],
+      "skills": {"Perception": "Master", "Mysticism": "Master"},
       "speed": []
     },
     {
       "name": "Fire",
-      "abilities": [],
+      "abilities": ["Immunity Fire", "Vulnerability Cold"],
       "skills": {},
+      "speed": []
+    },
+    {
+      "name": "Giant",
+      "abilities": ["Low-Light Vision"],
+      "skills": {"Intimidate": "Master", "Perception": "Master"},
       "speed": []
     },
     {
       "name": "Gnome",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Low-Light Vision", "Eternal Hope", "Gnome Magic"],
+      "skills": {"Culture": "Master"},
       "speed": []
     },
     {
       "name": "Goblinoid",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Darkvision", "Fast", "Tinker"],
+      "skills": {"Engineering": "Master", "Stealth": "Master"},
       "speed": []
     },
     {
       "name": "Gray",
-      "abilities": [],
+      "abilities": ["Darkvision", "Telepathy", "Phase"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Halfling",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Halfling Luck", "Sneaky"],
+      "skills": {"Perception": "Master", "Stealth": "Master", "Acrobatics": "Good", "Athletics": "Good"},
       "speed": []
     },
     {
       "name": "Human",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Bonus Special Ability"],
+      "skills": {"Bonus Skill": "Good"},
       "speed": []
     },
     {
       "name": "Ikeshti",
-      "abilities": [],
+      "abilities": ["Desert Survivor", "Shed Skin", "Squirt Blood"],
       "skills": {},
-      "speed": []
+      "speed": ["Climb"]
     },
     {
       "name": "Incorporeal",
-      "abilities": [],
+      "abilities": ["Incorporeal"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Inevitable",
-      "abilities": [],
+      "abilities": ["Darkvision", "Low-Light Vision", "Constructed", "Regeneration", "Truespeech"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Kasatha",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Desert Stride", "Four-Armed"],
+      "skills": {"Acrobatics": "Master", "Athletics": "Master", "Culture": "Good"},
       "speed": []
     },
     {
       "name": "Lashunta",
-      "abilities": [],
+      "abilities": ["Limited Telepathy", "Lashunta Magic"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Maraquoi",
-      "abilities": [],
-      "skills": {},
-      "speed": []
+      "abilities": ["Low-Light Vision", "Blindsense (Sound)", "Prehensile Tail"],
+      "skills": {"Survival": "Master"},
+      "speed": ["Climb 20"]
     },
     {
       "name": "Orc",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Darkvision", "Ferocity"],
+      "skills": {"Intimidate": "Master", "Survival": "Master"},
       "speed": []
     },
     {
       "name": "Plantlike",
-      "abilities": [],
+      "abilities": ["Plantlike"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Protean",
-      "abilities": [],
+      "abilities": ["Blindsense", "Immunity Acid", "Resist Electricity 10", "Resist Sonic 10", "Amorphous", "Change Shape", "Grab"],
       "skills": {},
-      "speed": []
+      "speed": ["Fly"]
     },
     {
       "name": "Reptoid",
-      "abilities": [],
+      "abilities": ["Low-Light Vision", "Change Shape", "Cold-Blooded", "Natural Weapons"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Ryphorian",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Low-Light Vision", "Bonus Special Ability", "Trimorphic"],
+      "skills": {"Perception": "Master"},
       "speed": []
     },
     {
       "name": "Sarcesian",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Low-Light Vision", "Void Flier"],
+      "skills": {"Bonus Skill": "Good"},
       "speed": []
     },
     {
       "name": "Shapechanger",
-      "abilities": [],
+      "abilities": ["Change Shape"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Shirren",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Blindsense (Vibration)", "Communalism", "Limited Telepathy"],
+      "skills": {"Diplomacy": "Good", "Culture": "Good"},
       "speed": []
     },
     {
       "name": "Skittermander",
-      "abilities": [],
+      "abilities": ["Low-Light Vision", "Grappler", "Hyper", "Six-Armed"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Swarm",
-      "abilities": [],
+      "abilities": ["Swarm Defenses", "Swarm Immunities", "Distraction", "Swarm Attack"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Verthani",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Low-Light Vision", "Easily Augmented", "Skin Mimic"],
+      "skills": {"Bonus Skill": "Good"},
       "speed": []
     },
     {
       "name": "Vesk",
-      "abilities": [],
+      "abilities": ["Low-Light Vision", "Armor Savant", "Fearless", "Natural Weapons"],
       "skills": {},
       "speed": []
     },
     {
       "name": "Water",
       "abilities": [],
-      "skills": {},
-      "speed": []
+      "skills": {"Athletics": "Master"},
+      "speed": ["Swim"]
     },
     {
       "name": "Ysoki",
-      "abilities": [],
-      "skills": {},
+      "abilities": ["Darkvision", "Cheek Pouches", "Moxie"],
+      "skills": {"Engineering": "Master", "Stealth": "Master", "Survival": "Good"},
       "speed": []
     },
     {
