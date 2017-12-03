@@ -171,6 +171,10 @@ func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []stri
 			this.SpecialAbilities[ability.Name] = struct{}{}
 		case "OTHER":
 			this.OtherAbilities[ability.Name] = struct{}{}
+		case "ATTACK":
+			this.OffensiveAbilities[ability.Name] = struct{}{}
+		case "":
+			//Ability is unfinished
 		default:
 			panic(fmt.Sprintf("Unknown ability type: %s for ability %s", ability.Type, ability.Name))
 		}
