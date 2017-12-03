@@ -95,8 +95,8 @@ func (this *CreatureBuilder) Build(skills []string, abilities []Ability) Creatur
 }
 
 func (this *Creature) AssignAttacks(attackArray AttackArray, bonus int) {
-	this.Melee = make(map[Attack]struct{})
-	this.Ranged = make(map[Attack]struct{})
+	this.Melee = make([]Attack, 0)
+	this.Ranged = make([]Attack, 0)
 	attackMap := map[string]struct{}{
 		"Melee":  {},
 		"Ranged": {},
@@ -115,7 +115,7 @@ func (this *Creature) AssignAttacks(attackArray AttackArray, bonus int) {
 				DamageDice:  attackArray.Standard,
 				DamageType:  "Kinetic",
 			}
-			this.Melee[attack] = struct{}{}
+			this.Melee = append(this.Melee, attack)
 		case "Ranged":
 			var damageDice Dice
 			damageType := GetOneOf("Damage type: ", []string{"Kinetic", "Energy"})
@@ -130,7 +130,7 @@ func (this *Creature) AssignAttacks(attackArray AttackArray, bonus int) {
 				DamageDice:  damageDice,
 				DamageType:  damageType,
 			}
-			this.Ranged[attack] = struct{}{}
+			this.Ranged = append(this.Ranged, attack)
 		}
 		delete(attackMap, attackType)
 	}

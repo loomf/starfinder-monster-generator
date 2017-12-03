@@ -115,8 +115,8 @@ type Creature struct {
 	Resistances                  map[string]struct{}
 	Weaknesses                   map[string]struct{}
 	Specials                     map[string]struct{}
-	Melee                        map[Attack]struct{}
-	Ranged                       map[Attack]struct{}
+	Melee                        []Attack
+	Ranged                       []Attack
 	OffensiveAbilities           map[string]struct{}
 	DefensiveAbilities           map[string]struct{}
 	SpecialAbilities             map[string]struct{}
