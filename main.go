@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	log.SetOutput(os.Stderr)
 	arrays, err := LoadArrays("arrays.json", "attack_arrays.json")
 	if err != nil {
@@ -30,10 +31,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	validate := NewValidator(arrays, types, subtypes, skills, abilities)
 	// spew.Dump(arrays)
 	creature := Creature{}
-	err = validate.Struct(&creature)
+    err = creature.Complete(arrays, types, subtypes, skills, abilities)
 	fmt.Printf("%s\n", creature)
 	fmt.Println(err)
 	// builder := CreatureBuilder{}

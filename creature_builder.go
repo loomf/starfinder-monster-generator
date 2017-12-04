@@ -7,6 +7,7 @@ import (
 type Creature struct {
 	ArraySpec
 	TypeSpec
+    ModiferAssignments [6]int `validate:"modiferAssignments"`
 }
 
 type ArraySpec struct {
@@ -34,51 +35,20 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
     statBlock.AbilityDC = this.Array.AbilityDC
     statBlock.BaseSpellDC = this.Array.BaseSpellDC
 
-    modifiers := GenerateModifiers(this.Array.Name, this.Array.AbilityScoreBonuses)
-    statBlock.STR = modifiers[0]
-    statBlock.DEX = modifiers[1]
-    statBlock.CON = modifiers[2]
-    statBlock.INT = modifiers[3]
-    statBlock.WIS = modifiers[4]
-    statBlock.CHA = modifiers[5]
-
-    return statBlock, nil
-}
-
-func GenerateModifiers(arrayType string, modifiers []int) [6]int {
+	modifiers := this.Array.AbilityScoreBonuses[:]
+	// 3 not as good ability scores
 	modifiers = append(modifiers, int((float64(modifiers[2])*0.95 - 0.25)))
 	modifiers = append(modifiers, int((float64(modifiers[3])*0.85 - 0.75)))
 	modifiers = append(modifiers, int((float64(modifiers[4])*0.6 - 2.0)))
 
-    var assignedModifiers [6]int
-    var preferrendIndices map[int]struct{}
-    var numPreferredModifiers int
-	switch this.Array.Name {
-	case "Combatant":
-        preferredIndices = map[int]struct{
-            0: struct{}{},
-            1: struct{}{},
-            2: struct{}{},
-        }
-        numPreferredModifiers = 2
-	case "Expert":
-        preferredIndices = map[int]struct{
-        }
-        numPreferredModifiers = 0
-	case "Spellcaster":
-        preferredIndices = map[int]struct{
-            3: struct{}{},
-            4: struct{}{},
-            5: struct{}{},
-        }
-        numPreferredModifiers = 1
-	default:
-		panic("Unknown array: " + this.Array.Name)
+    statBlock.STR = modifiers[this.ModifierAssignments[0]]
+    statBlock.DEX = modifiers[this.ModifierAssignments[1]]
+    statBlock.CON = modifiers[this.ModifierAssignments[2]]
+    statBlock.INT = modifiers[this.ModifierAssignments[3]]
+    statBlock.WIS = modifiers[this.ModifierAssignments[4]]
+    statBlock.CHA = modifiers[this.ModifierAssignments[5]]
 
-        for i := 0; i < numPreferredModifiers; i++ {
-
-        }
-    }
+    return statBlock, nil
 }
 
 /*
