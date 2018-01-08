@@ -2,12 +2,14 @@ package main
 
 import (
 	"os"
+	"fmt"
+	"log"
 	"encoding/json"
-
 	// "github.com/davecgh/go-spew/spew"
 )
 
 func main() {
+	log.SetOutput(os.Stderr)
 	arrays, err := LoadArrays("arrays.json", "attack_arrays.json")
 	if err != nil {
 		panic(err)
@@ -28,16 +30,32 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	validate := NewValidator(arrays, types, subtypes, skills, abilities)
 	// spew.Dump(arrays)
-	builder := CreatureBuilder{}
-	builder.GetArrayType(arrays)
-	builder.GetType(types)
-	builder.GetSubtype(subtypes)
+	creature := Creature{}
+	err = validate.Struct(&creature)
+	fmt.Printf("%s\n", creature)
+	fmt.Println(err)
+	// builder := CreatureBuilder{}
+	// builder.GetArrayType(arrays)
+	// builder.GetType(types)
+	// builder.GetSubtype(subtypes)
 	// spew.Dump(builder)
-	creature := builder.Build(skills, abilities)
+	// creature := builder.Build(skills, abilities)
 	//spew.Dump(creature)
-	encoder := json.NewEncoder(os.Stderr)
+	encoder := json.NewEncoder(os.Stdout)
+    encoder.SetIndent("", "  ")
 	err = encoder.Encode(creature)
+	if err != nil {
+		panic(err)
+	}
+
+    statBlock, err := creature.GenerateStatBlock()
+	if err != nil {
+		panic(err)
+	}
+
+    err = encoder.Encode(statBlock)
 	if err != nil {
 		panic(err)
 	}

@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 )
 
-func LoadTypes(filename string) ([]Type, error) {
+func LoadTypes(filename string) (map[string]Type, error) {
 	type file struct {
-		Types []Type
+		Types map[string]Type
 	}
 
 	var fileTypes file
@@ -20,6 +20,11 @@ func LoadTypes(filename string) ([]Type, error) {
 	err = json.Unmarshal(jsonBytes, &fileTypes)
 	if err != nil {
 		return nil, err
+	}
+
+	for name, creatureType := range fileTypes.Types {
+        creatureType.Name = name
+        fileTypes.Types[name] = creatureType
 	}
 
 	return fileTypes.Types, nil

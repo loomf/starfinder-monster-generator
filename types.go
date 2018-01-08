@@ -24,6 +24,7 @@ type Type struct {
 	Name        string
 	Adjustments Adjustments
 	Abilities   []string
+	ValidSubtypes []string
 }
 
 type Adjustments struct {
@@ -36,6 +37,7 @@ type Subtype struct {
 	Abilities []string
 	Skills    map[string]string
 	Speed     []string
+	ValidTypes []string
 }
 
 type Ability struct {
@@ -98,7 +100,7 @@ func (this *Dice) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-type Creature struct {
+type StatBlock struct {
 	CR                 string
 	XP                 int
 	Size               string

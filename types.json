@@ -1,127 +1,222 @@
 {
-	"types": [
-        {	"name": "Aberration",
-            "abilities": ["Darkvision"],
-            "adjustments": {
-                "intelligence": [-4,-5],
-                "attackBonus": 0,
-                "fort": 0,
-                "reflex": 0,
-                "will": 2
-			}
-        },
-        {	"name": "Animal",
-            "abilities": ["Darkvision"],
-            "adjustments": {
-                "constitution": null,
-                "attackBonus": 0,
-                "fort": 2,
-                "reflex": 2,
-                "will": 0
-			}
-        },
-        {	"name": "Construct",
-            "abilities": ["Darkvision", "Low-Light Vision", "Unliving", "Construct Immunities"],
-            "adjustments": {
-                "constitution": null,
-                "attackBonus": 0,
-                "fort": 2,
-                "reflex": 2,
-                "will": 0
-			}
-        },
-        {	"name": "Dragon",
-            "abilities": ["Darkvision", "Low-Light Vision", "Immunity Paralysis", "Immunity Sleep"],
-            "adjustments": {
-                "attackBonus": 1,
-                "fort": 2,
-                "reflex": 2,
-                "will": 2
-			}
-        },
-        {	"name": "Fey",
-            "abilities": ["Low-Light Vision"],
-            "adjustments": {
-                "attackBonus": -1,
-                "fort": 2,
-                "reflex": 2,
-                "will": 0
-			}
-        },
-        {	"name": "Humanoid",
-            "abilities": ["Low-Light Vision"],
-            "adjustments": {
-                "attackBonus": 0,
-                "TODO": "Only one of these should be 2",			
-                "fort": 2,
-                "reflex": 2,
-                "will": 2
-			}
-        },
-        {	"name": "Magical Beast",
-            "abilities": ["Darkvision", "Low-Light Vision"],
-            "adjustments": {
-                "attackBonus": 1,
-                "fort": 2,
-                "reflex": 2,
-                "will": 0
-			}
-        },
-        {	"name": "Monstrous Humanoid",
-            "abilities": ["Darkvision", "Low-Light Vision"],
-            "adjustments": {
-                "attackBonus": 1,
-                "fort": 0,
-                "reflex": 2,
-                "will": 2
-			}
-        },
-        {	"name": "Ooze",
-            "abilities": ["Blindsight", "Mindless", "Sightless", "Ooze Immunities"],
-            "adjustments": {
-                "attackBonus": 0,
-                "fort": 2,
-                "reflex": -2,
-                "will": -2
-			}
-        },
-        {	"name": "Outsider",
-            "abilities": ["Darkvision"],
-            "adjustments": {
-                "attackBonus": 1,
-                "TODO": "Only one of these should be 2",
-                "fort": 2,
-                "reflex": 2,
-                "will": 2
-			}
-        },
-        {	"name": "Plant",
-            "abilities": ["Low-Light Vision", "Plant Immunities"],
-            "adjustments": {
-                "attackBonus": 0,
-                "fort": 2,
-                "reflex": 0,
-                "will": 0
-			}
-        },
-        {	"name": "Undead",
-            "abilities": ["Darkvision", "Unliving", "Undead Immunities"],
-            "adjustments": {
-                "attackBonus": 0,
-                "fort": 0,
-                "reflex": 0,
-                "will": 2
-			}
-        },
-        {	"name": "Vermin",
-            "abilities": ["Darkvision", "Mindless"],
-            "adjustments": {
-                "attackBonus": 0,
-                "fort": 2,
-                "reflex": 0,
-                "will": 0
-			}
-        }
-    ]
+  "types": {
+    "Aberration": {
+      "abilities": [
+        "Darkvision"
+      ],
+      "adjustments": {
+        "intelligence": [
+          -4,
+          -5
+        ],
+        "attackBonus": 0,
+        "fort": 0,
+        "reflex": 0,
+        "will": 2
+      }
+    },
+    "Animal": {
+      "abilities": [
+        "Darkvision"
+      ],
+      "adjustments": {
+        "constitution": null,
+        "attackBonus": 0,
+        "fort": 2,
+        "reflex": 2,
+        "will": 0
+      }
+    },
+    "Construct": {
+      "abilities": [
+        "Darkvision",
+        "Low-Light Vision",
+        "Unliving",
+        "Construct Immunities"
+      ],
+      "adjustments": {
+        "constitution": null,
+        "attackBonus": 0,
+        "fort": 2,
+        "reflex": 2,
+        "will": 0
+      },
+      "validSubtypes": [
+        "Inevitable",
+        "Magical",
+        "Technological"
+      ]
+    },
+    "Dragon": {
+      "abilities": [
+        "Darkvision",
+        "Low-Light Vision",
+        "Immunity Paralysis",
+        "Immunity Sleep"
+      ],
+      "adjustments": {
+        "attackBonus": 1,
+        "fort": 2,
+        "reflex": 2,
+        "will": 2
+      }
+    },
+    "Fey": {
+      "abilities": [
+        "Low-Light Vision"
+      ],
+      "adjustments": {
+        "attackBonus": -1,
+        "fort": 2,
+        "reflex": 2,
+        "will": 0
+      }
+    },
+    "Humanoid": {
+      "abilities": [
+        "Low-Light Vision"
+      ],
+      "adjustments": {
+        "attackBonus": 0,
+        "TODO": "Only one of these should be 2",
+        "fort": 2,
+        "reflex": 2,
+        "will": 2
+      },
+      "validSubtypes": [
+        "Android",
+        "Aquatic",
+        "Dwarf",
+        "Drow",
+        "Elf",
+        "Giant",
+        "Gnome",
+        "Goblinoid",
+        "Gray",
+        "Halfling",
+        "Human",
+        "Ikeshti",
+        "Kasatha",
+        "Lashunta",
+        "Maraqoi",
+        "Orc",
+        "Plantlike",
+        "Protean",
+        "Reptoid",
+        "Ryphorian",
+        "Sarcesian",
+        "Shapechanger",
+        "Shirren",
+        "Skittermander",
+        "Swarm",
+        "Verthani",
+        "Vesk",
+        "Ysoki"
+      ]
+    },
+    "Magical Beast": {
+      "abilities": [
+        "Darkvision",
+        "Low-Light Vision"
+      ],
+      "adjustments": {
+        "attackBonus": 1,
+        "fort": 2,
+        "reflex": 2,
+        "will": 0
+      }
+    },
+    "Monstrous Humanoid": {
+      "abilities": [
+        "Darkvision",
+        "Low-Light Vision"
+      ],
+      "adjustments": {
+        "attackBonus": 1,
+        "fort": 0,
+        "reflex": 2,
+        "will": 2
+      }
+    },
+    "Ooze": {
+      "abilities": [
+        "Blindsight",
+        "Mindless",
+        "Sightless",
+        "Ooze Immunities"
+      ],
+      "adjustments": {
+        "attackBonus": 0,
+        "fort": 2,
+        "reflex": -2,
+        "will": -2
+      }
+    },
+    "Outsider": {
+      "abilities": [
+        "Darkvision"
+      ],
+      "adjustments": {
+        "attackBonus": 1,
+        "TODO": "Only one of these should be 2",
+        "fort": 2,
+        "reflex": 2,
+        "will": 2
+      },
+      "validSubtypes": [
+        "Aeon",
+        "Agathion",
+        "Air",
+        "Angel",
+        "Archon",
+        "Azata",
+        "Cold",
+        "Daemon",
+        "Demon",
+        "Devil",
+        "Earth",
+        "Elemental",
+        "Fire",
+        "Inevitable",
+        "Water"
+      ]
+    },
+    "Plant": {
+      "abilities": [
+        "Low-Light Vision",
+        "Plant Immunities"
+      ],
+      "adjustments": {
+        "attackBonus": 0,
+        "fort": 2,
+        "reflex": 0,
+        "will": 0
+      }
+    },
+    "Undead": {
+      "abilities": [
+        "Darkvision",
+        "Unliving",
+        "Undead Immunities"
+      ],
+      "adjustments": {
+        "attackBonus": 0,
+        "fort": 0,
+        "reflex": 0,
+        "will": 2
+      }
+    },
+    "Vermin": {
+      "abilities": [
+        "Darkvision",
+        "Mindless"
+      ],
+      "adjustments": {
+        "attackBonus": 0,
+        "fort": 2,
+        "reflex": 0,
+        "will": 0
+      }
+    }
+  }
 }
-

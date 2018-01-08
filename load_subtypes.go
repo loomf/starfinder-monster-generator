@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 )
 
-func LoadSubtypes(filename string) ([]Subtype, error) {
+func LoadSubtypes(filename string) (map[string]Subtype, error) {
 	type file struct {
-		Types []Subtype
+		Subtypes map[string]Subtype
 	}
 
 	var fileSubtypes file
@@ -22,5 +22,10 @@ func LoadSubtypes(filename string) ([]Subtype, error) {
 		return nil, err
 	}
 
-	return fileSubtypes.Types, nil
+	for name, subtype := range fileSubtypes.Subtypes {
+        subtype.Name = name
+        fileSubtypes.Subtypes[name] = subtype
+	}
+
+	return fileSubtypes.Subtypes, nil
 }

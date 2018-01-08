@@ -1,50 +1,87 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 )
 
-type CreatureBuilder struct {
-	Array
-	Type
-	Subtype
+type Creature struct {
+	ArraySpec
+	TypeSpec
 }
 
-func (this *CreatureBuilder) GetArrayType(arrayMap map[string](map[string]Array)) {
-	arrayTypes := make([]string, 0, len(arrayMap))
-	for k := range arrayMap {
-		arrayTypes = append(arrayTypes, k)
-	}
-	arrayType := GetOneOf("Array Type: ", arrayTypes)
-
-	crMap := arrayMap[arrayType]
-	crs := make([]string, 0, len(crMap))
-	for k := range crMap {
-		crs = append(crs, k)
-	}
-	cr := GetOneOf("CR: ", crs)
-	this.Array = crMap[cr]
+type ArraySpec struct {
+	ArrayType string
+	CR string
+    Array *Array
 }
 
-func (this *CreatureBuilder) GetType(types []Type) {
-	typeNames := make([]string, len(types))
-	typeMap := make(map[string]Type, len(types))
-	for i, v := range types {
-		typeNames[i] = v.Name
-		typeMap[v.Name] = v
-	}
-	this.Type = typeMap[GetOneOf("Type: ", typeNames)]
+type TypeSpec struct {
+	Type *Type
+	Subtype *Subtype
 }
 
-func (this *CreatureBuilder) GetSubtype(subtypes []Subtype) {
-	subtypeNames := make([]string, len(subtypes))
-	subtypeMap := make(map[string]Subtype, len(subtypes))
-	for i, v := range subtypes {
-		subtypeNames[i] = v.Name
-		subtypeMap[v.Name] = v
-	}
-	this.Subtype = subtypeMap[GetOneOf("Subtype: ", subtypeNames)]
+func (this *Creature) GenerateStatBlock() (StatBlock, error) {
+    var statBlock StatBlock
+
+    // Step 1: Array
+    statBlock.CR = this.Array.CR
+    statBlock.KAC = this.Array.KAC
+    statBlock.EAC = this.Array.EAC
+    statBlock.Fort = this.Array.Fort
+    statBlock.Reflex = this.Array.Reflex
+    statBlock.Will = this.Array.Will
+    statBlock.HP = this.Array.HP
+    statBlock.AbilityDC = this.Array.AbilityDC
+    statBlock.BaseSpellDC = this.Array.BaseSpellDC
+
+    modifiers := GenerateModifiers(this.Array.Name, this.Array.AbilityScoreBonuses)
+    statBlock.STR = modifiers[0]
+    statBlock.DEX = modifiers[1]
+    statBlock.CON = modifiers[2]
+    statBlock.INT = modifiers[3]
+    statBlock.WIS = modifiers[4]
+    statBlock.CHA = modifiers[5]
+
+    return statBlock, nil
 }
+
+func GenerateModifiers(arrayType string, modifiers []int) [6]int {
+	modifiers = append(modifiers, int((float64(modifiers[2])*0.95 - 0.25)))
+	modifiers = append(modifiers, int((float64(modifiers[3])*0.85 - 0.75)))
+	modifiers = append(modifiers, int((float64(modifiers[4])*0.6 - 2.0)))
+
+    var assignedModifiers [6]int
+    var preferrendIndices map[int]struct{}
+    var numPreferredModifiers int
+	switch this.Array.Name {
+	case "Combatant":
+        preferredIndices = map[int]struct{
+            0: struct{}{},
+            1: struct{}{},
+            2: struct{}{},
+        }
+        numPreferredModifiers = 2
+	case "Expert":
+        preferredIndices = map[int]struct{
+        }
+        numPreferredModifiers = 0
+	case "Spellcaster":
+        preferredIndices = map[int]struct{
+            3: struct{}{},
+            4: struct{}{},
+            5: struct{}{},
+        }
+        numPreferredModifiers = 1
+	default:
+		panic("Unknown array: " + this.Array.Name)
+
+        for i := 0; i < numPreferredModifiers; i++ {
+
+        }
+    }
+}
+
+/*
 
 func (this *CreatureBuilder) Build(skills []string, abilities []Ability) Creature {
 	creature := Creature{
@@ -279,3 +316,4 @@ func (this *Creature) AssignAbilityScores(scores []int, primaryChoices []string,
 		}
 	}
 }
+*/
