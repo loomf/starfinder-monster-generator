@@ -23,8 +23,8 @@ func LoadTypes(filename string) (map[string]Type, error) {
 	}
 
 	for name, creatureType := range fileTypes.Types {
-        creatureType.Name = name
-        fileTypes.Types[name] = creatureType
+		creatureType.Name = name
+		fileTypes.Types[name] = creatureType
 	}
 
 	return fileTypes.Types, nil

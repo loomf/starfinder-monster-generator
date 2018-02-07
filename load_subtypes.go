@@ -23,8 +23,8 @@ func LoadSubtypes(filename string) (map[string]Subtype, error) {
 	}
 
 	for name, subtype := range fileSubtypes.Subtypes {
-        subtype.Name = name
-        fileSubtypes.Subtypes[name] = subtype
+		subtype.Name = name
+		fileSubtypes.Subtypes[name] = subtype
 	}
 
 	return fileSubtypes.Subtypes, nil

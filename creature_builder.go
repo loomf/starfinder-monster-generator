@@ -1,39 +1,40 @@
 package main
 
 import (
-	//"fmt"
+//"fmt"
 )
 
 type Creature struct {
 	ArraySpec
 	TypeSpec
-    ModiferAssignments [6]int `validate:"modiferAssignments"`
+	ModifierAssignments [6]int `validate:"modiferAssignments"`
 }
 
 type ArraySpec struct {
 	ArrayType string
-	CR string
-    Array *Array
+	CR        string
+	CRArrays  map[string]Array
+	Array     *Array
 }
 
 type TypeSpec struct {
-	Type *Type
+	Type    *Type
 	Subtype *Subtype
 }
 
 func (this *Creature) GenerateStatBlock() (StatBlock, error) {
-    var statBlock StatBlock
+	var statBlock StatBlock
 
-    // Step 1: Array
-    statBlock.CR = this.Array.CR
-    statBlock.KAC = this.Array.KAC
-    statBlock.EAC = this.Array.EAC
-    statBlock.Fort = this.Array.Fort
-    statBlock.Reflex = this.Array.Reflex
-    statBlock.Will = this.Array.Will
-    statBlock.HP = this.Array.HP
-    statBlock.AbilityDC = this.Array.AbilityDC
-    statBlock.BaseSpellDC = this.Array.BaseSpellDC
+	// Step 1: Array
+	statBlock.CR = this.Array.CR
+	statBlock.KAC = this.Array.KAC
+	statBlock.EAC = this.Array.EAC
+	statBlock.Fort = this.Array.Fort
+	statBlock.Reflex = this.Array.Reflex
+	statBlock.Will = this.Array.Will
+	statBlock.HP = this.Array.HP
+	statBlock.AbilityDC = this.Array.AbilityDC
+	statBlock.BaseSpellDC = this.Array.BaseSpellDC
 
 	modifiers := this.Array.AbilityScoreBonuses[:]
 	// 3 not as good ability scores
@@ -41,14 +42,14 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
 	modifiers = append(modifiers, int((float64(modifiers[3])*0.85 - 0.75)))
 	modifiers = append(modifiers, int((float64(modifiers[4])*0.6 - 2.0)))
 
-    statBlock.STR = modifiers[this.ModifierAssignments[0]]
-    statBlock.DEX = modifiers[this.ModifierAssignments[1]]
-    statBlock.CON = modifiers[this.ModifierAssignments[2]]
-    statBlock.INT = modifiers[this.ModifierAssignments[3]]
-    statBlock.WIS = modifiers[this.ModifierAssignments[4]]
-    statBlock.CHA = modifiers[this.ModifierAssignments[5]]
+	statBlock.STR = modifiers[this.ModifierAssignments[0]]
+	statBlock.DEX = modifiers[this.ModifierAssignments[1]]
+	statBlock.CON = modifiers[this.ModifierAssignments[2]]
+	statBlock.INT = modifiers[this.ModifierAssignments[3]]
+	statBlock.WIS = modifiers[this.ModifierAssignments[4]]
+	statBlock.CHA = modifiers[this.ModifierAssignments[5]]
 
-    return statBlock, nil
+	return statBlock, nil
 }
 
 /*

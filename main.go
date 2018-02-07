@@ -1,11 +1,12 @@
 package main
 
 import (
-	"os"
+	"encoding/json"
 	"fmt"
 	"log"
-	"encoding/json"
-	// "github.com/davecgh/go-spew/spew"
+	"math/rand"
+	"os"
+	"time"
 )
 
 func main() {
@@ -32,8 +33,12 @@ func main() {
 		panic(err)
 	}
 	// spew.Dump(arrays)
-	creature := Creature{}
-    err = creature.Complete(arrays, types, subtypes, skills, abilities)
+	creature := Creature{
+		ArraySpec: ArraySpec{
+			ArrayType: "",
+		},
+	}
+	err = creature.Complete(arrays, types, subtypes, skills, abilities)
 	fmt.Printf("%s\n", creature)
 	fmt.Println(err)
 	// builder := CreatureBuilder{}
@@ -44,18 +49,18 @@ func main() {
 	// creature := builder.Build(skills, abilities)
 	//spew.Dump(creature)
 	encoder := json.NewEncoder(os.Stdout)
-    encoder.SetIndent("", "  ")
+	encoder.SetIndent("", "  ")
 	err = encoder.Encode(creature)
 	if err != nil {
 		panic(err)
 	}
 
-    statBlock, err := creature.GenerateStatBlock()
+	statBlock, err := creature.GenerateStatBlock()
 	if err != nil {
 		panic(err)
 	}
 
-    err = encoder.Encode(statBlock)
+	err = encoder.Encode(statBlock)
 	if err != nil {
 		panic(err)
 	}

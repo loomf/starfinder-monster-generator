@@ -21,9 +21,9 @@ const (
 )
 
 type Type struct {
-	Name        string
-	Adjustments Adjustments
-	Abilities   []string
+	Name          string
+	Adjustments   Adjustments
+	Abilities     []string
 	ValidSubtypes []string
 }
 
@@ -33,10 +33,10 @@ type Adjustments struct {
 }
 
 type Subtype struct {
-	Name      string
-	Abilities []string
-	Skills    map[string]string
-	Speed     []string
+	Name       string
+	Abilities  []string
+	Skills     map[string]string
+	Speed      []string
 	ValidTypes []string
 }
 
