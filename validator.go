@@ -73,6 +73,10 @@ func (this *Creature) Complete(arrays map[string]map[string]Array, types map[str
 	if err != nil {
 		return err
 	}
+	err = this.CompleteAttacks()
+	if err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -246,6 +250,24 @@ func (this *Creature) CompleteSkills(skills []string) error {
 		this.MasterSkills = skills[:this.Array.MasterSkills]
 		skills = skills[this.Array.MasterSkills:]
 		this.GoodSkills = skills[:this.Array.GoodSkills+1]
+	}
+	return nil
+}
+
+func (this *Creature) CompleteAttacks() error {
+	if this.Attacks == nil {
+		options := [][]string{
+			{"Melee"},
+			{"Ranged"},
+			{"Melee", "Ranged"},
+			{"Ranged", "Melee"},
+		}
+		this.Attacks = options[rand.Intn(4)]
+		for i, attack := range this.Attacks {
+			if attack == "Ranged" {
+				this.Attacks[i] = fmt.Sprintf("Ranged-%s", []string{"Kinetic", "Energy"}[rand.Intn(2)])
+			}
+		}
 	}
 	return nil
 }

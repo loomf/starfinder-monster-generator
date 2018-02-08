@@ -1,7 +1,7 @@
 package main
 
 import (
-//"fmt"
+	"fmt"
 )
 
 type Creature struct {
@@ -10,6 +10,7 @@ type Creature struct {
 	ModifierAssignments [6]int `validate:"modiferAssignments"`
 	GoodSkills          []string
 	MasterSkills        []string
+	Attacks             []string
 }
 
 type ArraySpec struct {
@@ -66,6 +67,42 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
 	// 1h: Attack Bonuses
 	// 1i: Ranged Damange
 	// 1j: Melee Damage
+	for i, attack := range this.Attacks {
+		var bonus int
+		if i == 0 {
+			bonus = this.Array.AttackArray.High
+		} else {
+			bonus = this.Array.AttackArray.Low
+		}
+		switch attack {
+		case "Melee":
+			statBlock.Melee = append(statBlock.Melee,
+				Attack{
+					AttackBonus: bonus,
+					DamageDice:  this.Array.AttackArray.Standard,
+					DamageType:  "Kinetic",
+				},
+			)
+		case "Ranged-Kinetic":
+			statBlock.Ranged = append(statBlock.Ranged,
+				Attack{
+					AttackBonus: bonus,
+					DamageDice:  this.Array.AttackArray.Kinetic,
+					DamageType:  "Kinetic",
+				},
+			)
+		case "Ranged-Energy":
+			statBlock.Ranged = append(statBlock.Ranged,
+				Attack{
+					AttackBonus: bonus,
+					DamageDice:  this.Array.AttackArray.Energy,
+					DamageType:  "Energy",
+				},
+			)
+		default:
+			panic(fmt.Sprintf("unknown attack %q", attack))
+		}
+	}
 	// Other Statistics
 	// 1k: Initiative
 	// 1l: Speed
