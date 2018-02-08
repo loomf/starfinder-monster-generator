@@ -39,7 +39,7 @@ func main() {
 		},
 	}
 	err = creature.Complete(arrays, types, subtypes, skills, abilities)
-	fmt.Printf("%s\n", creature)
+	//fmt.Printf("%s\n", creature)
 	fmt.Println(err)
 	// builder := CreatureBuilder{}
 	// builder.GetArrayType(arrays)

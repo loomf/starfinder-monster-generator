@@ -38,6 +38,15 @@ func RandomKey(hashMap interface{}) (string, error) {
 	return keys[rand.Intn(len(keys))], nil
 }
 
+func shuffle(arg interface{}) {
+	val := reflect.ValueOf(arg)
+	swapper := reflect.Swapper(arg)
+	for i := 0; i < val.Len(); i++ {
+		j := rand.Intn(i + 1)
+		swapper(i, j)
+	}
+}
+
 func (this *Creature) Complete(arrays map[string]map[string]Array, types map[string]Type, subtypes map[string]Subtype, skills []string, abilities []Ability) error {
 	var err error
 	err = this.CompleteArrayType(arrays)
@@ -57,6 +66,10 @@ func (this *Creature) Complete(arrays map[string]map[string]Array, types map[str
 		return err
 	}
 	err = this.CompleteModifierAssignments()
+	if err != nil {
+		return err
+	}
+	err = this.CompleteSkills(skills)
 	if err != nil {
 		return err
 	}
@@ -185,24 +198,6 @@ func (this *Creature) CompleteSubtype(validTypes map[string]Type, validSubtypes 
 func (this *Creature) CompleteModifierAssignments() error {
 	if this.ModifierAssignments == [6]int{0, 0, 0, 0, 0, 0} {
 
-		shuffle := func(list []int) {
-			if len(list) == 0 {
-				return
-			}
-			saved := list[0]
-			i := 0
-			perm := rand.Perm(len(list))
-			for {
-				if perm[i] == 0 {
-					list[i] = saved
-					break
-				} else {
-					list[i] = list[perm[i]]
-					i = perm[i]
-				}
-			}
-		}
-
 		switch this.ArrayType {
 		case "Combatant":
 			// best 2 stats go to two of STR, DEX, CON
@@ -223,7 +218,34 @@ func (this *Creature) CompleteModifierAssignments() error {
 		}
 	}
 
-	fmt.Println("assignments: %s\n", this.ModifierAssignments)
+	fmt.Printf("assignments: %s\n", this.ModifierAssignments)
 
+	return nil
+}
+
+func (this *Creature) CompleteSkills(skills []string) error {
+	if this.GoodSkills == nil && this.MasterSkills == nil {
+		// perception is always a skill
+		totalSkills := this.Array.GoodSkills + this.Array.MasterSkills + 1
+		// randomize ordering
+		shuffle(skills)
+		// make sure perception is one of the skills
+		for i, skill := range skills {
+			if skill == "Perception" {
+				skills[i], skills[0] = skills[0], skills[i]
+				break
+			}
+		}
+		// shuffle again to make sure that perception could be master or good
+		shuffle(skills[:totalSkills])
+
+		// example:
+		// skills = [good, good, good, master, master, bad, bad, bad, bad ....]
+		// num good skills = 3
+		// num master skills = 2
+		this.MasterSkills = skills[:this.Array.MasterSkills]
+		skills = skills[this.Array.MasterSkills:]
+		this.GoodSkills = skills[:this.Array.GoodSkills+1]
+	}
 	return nil
 }

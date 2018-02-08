@@ -24,7 +24,7 @@ type Type struct {
 	Name          string
 	Adjustments   Adjustments
 	Abilities     []string
-	ValidSubtypes []string
+	ValidSubtypes []string `json:"-"`
 }
 
 type Adjustments struct {
@@ -37,7 +37,7 @@ type Subtype struct {
 	Abilities  []string
 	Skills     map[string]string
 	Speed      []string
-	ValidTypes []string
+	ValidTypes []string `json:"-"`
 }
 
 type Ability struct {
