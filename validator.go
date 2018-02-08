@@ -77,6 +77,10 @@ func (this *Creature) Complete(arrays map[string]map[string]Array, types map[str
 	if err != nil {
 		return err
 	}
+	err = this.CompleteSpeeds()
+	if err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -267,6 +271,15 @@ func (this *Creature) CompleteAttacks() error {
 			if attack == "Ranged" {
 				this.Attacks[i] = fmt.Sprintf("Ranged-%s", []string{"Kinetic", "Energy"}[rand.Intn(2)])
 			}
+		}
+	}
+	return nil
+}
+
+func (this *Creature) CompleteSpeeds() error {
+	if this.Speed == nil {
+		this.Speed = map[string]int{
+			"Land": 30,
 		}
 	}
 	return nil

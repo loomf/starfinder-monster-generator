@@ -11,6 +11,7 @@ type Creature struct {
 	GoodSkills          []string
 	MasterSkills        []string
 	Attacks             []string
+	Speed               map[string]int
 }
 
 type ArraySpec struct {
@@ -105,9 +106,13 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
 	}
 	// Other Statistics
 	// 1k: Initiative
+	statBlock.Initiative = statBlock.DEX
 	// 1l: Speed
+	statBlock.Speed = this.Speed
 	// 1l: Feats
+	// nothing to do
 	// 1m: Languages
+	// TODO
 
 	// Step 2: Creature Type Graft
 
@@ -115,51 +120,6 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
 }
 
 /*
-
-func (this *Creature) AssignAttacks(attackArray AttackArray, bonus int) {
-	this.Melee = make([]Attack, 0)
-	this.Ranged = make([]Attack, 0)
-	attackMap := map[string]struct{}{
-		"Melee":  {},
-		"Ranged": {},
-	}
-
-	assignAttack := func(attackName string, attackBonus int) {
-		attackList := make([]string, 0, len(attackMap))
-		for attack := range attackMap {
-			attackList = append(attackList, attack)
-		}
-		attackType := GetOneOf(attackName+" attack: ", attackList)
-		switch attackType {
-		case "Melee":
-			attack := Attack{
-				AttackBonus: attackBonus + bonus,
-				DamageDice:  attackArray.Standard,
-				DamageType:  "Kinetic",
-			}
-			this.Melee = append(this.Melee, attack)
-		case "Ranged":
-			var damageDice Dice
-			damageType := GetOneOf("Damage type: ", []string{"Kinetic", "Energy"})
-			switch damageType {
-			case "Kinetic":
-				damageDice = attackArray.Kinetic
-			case "Energy":
-				damageDice = attackArray.Energy
-			}
-			attack := Attack{
-				AttackBonus: attackBonus + bonus,
-				DamageDice:  damageDice,
-				DamageType:  damageType,
-			}
-			this.Ranged = append(this.Ranged, attack)
-		}
-		delete(attackMap, attackType)
-	}
-	assignAttack("Primary", attackArray.High)
-	attackMap["None"] = struct{}{}
-	assignAttack("Secondary", attackArray.Low)
-}
 
 func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []string, numAbilities int) {
 	this.Senses = make(map[string]struct{})
