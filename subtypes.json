@@ -35,7 +35,7 @@
     "Air": {
       "abilities": [],
       "skills": {
-        "Acrobatics": "master"
+        "Acrobatics": "Master"
       },
       "speed": [
         "Fly (Perfect)"
@@ -80,7 +80,7 @@
         "Amphibious"
       ],
       "skills": {
-        "Athletics": "master"
+        "Athletics": "Master"
       },
       "speed": [
         "Swim"

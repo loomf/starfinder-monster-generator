@@ -47,7 +47,7 @@ func shuffle(arg interface{}) {
 	}
 }
 
-func (this *Creature) Complete(arrays map[string]map[string]Array, types map[string]Type, subtypes map[string]Subtype, skills []string, abilities []Ability) error {
+func (this *Creature) Complete(arrays map[string]map[string]Array, types map[string]Type, subtypes map[string]Subtype, skills []string) error {
 	var err error
 	err = this.CompleteArrayType(arrays)
 	if err != nil {

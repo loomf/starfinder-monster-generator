@@ -1,335 +1,329 @@
 {
-	"abilities": [{
-		"name": "Telepathy",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Extension of All",
-		"description": "",
-		"type": "SPECIAL"
-	},
-	{
-		"name": "Resist Electricity 10",
-		"description": "",
-		"type": "RESIST"
-	},
-	{
-		"name": "Resist Fire 10",
-		"description": "",
-		"type": "RESIST"
-	},
-	{
-		"name": "Channel Healing",
-		"description": "",
-		"type": "SPECIAL"
-	},
-	{
-		"name": "Resist Cold 10",
-		"description": "",
-		"type": "RESIST"
-	},
-	{
-		"name": "Resist Sonic 10",
-		"description": "",
-		"type": "RESIST"
-	},
-	{
-		"name": "Saving Throw Poison 4",
-		"description": "",
-		"type": "DEFENSE"
-	},
-	{
-		"name": "Low-Light Vision",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Constructed",
-		"description": "",
-			"type": "RESIST"
-	},
-	{
-		"name": "Flat Affect",
-		"description": "",
-		"type": "WEAKNESS"
-	},
-	{
-		"name": "Upgrade Slot",
-		"description": "",
-		"type": "OTHER"
-	},
-	{
-		"name": "Truespeech",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Protective Aura",
-		"description": "",
-		"type": "SPECIAL"
-	},
-	{
-		"name": "Water Breathing",
-		"description": "",
-		"type": "OTHER"
-	},
-	{
-		"name": "Amphibious",
-		"description": "",
-		"type": "OTHER"
-	},
-	{
-		"name": "Darkvision",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Truespeech",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Teleport",
-		"description": "",
-		"type": "SPECIAL"
-	},
-	{
-		"name": "Aura of Menace",
-		"description": "",
-		"type": "SPECIAL"
-	},
-	{
-		"name": "Unliving",
-		"description": "",
-		"type": "OTHER"
-	},
-	{
-		"name": "Blindsight",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Mindless",
-		"description": "",
-		"type": "WEAKNESS"
-	},
-	{
-		"name": "Sightless",
-		"description": "",
-		"type": "WEAKNESS"
-	},
-	{
-		"name": "Immunity Cold",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Critical Hits",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Poison",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name":"Immunity Paralysis",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Sleep",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Electricity",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Petrification",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Immunity Acid",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Construct Immunities",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Ooze Immunities",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Plant Immunities",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Undead Immunities",
-		"description": "",
-		"type": "IMMUNITY"
-	},
-	{
-		"name": "Amorphous",
-		"description": "Shapeless body, crtiical hits do normal damage but still apply effects",
-		"type": "DEFENSE"
-	},
-	{
-		"name": "Attach",
-		"description": "The creature can attempt a special attack against KAC as a standard action. If it succeeds, it deals no damage but it adheresto the target. Once attached, the creature gains a +4 bonus to its AC (from cover) and a +2 circumstance bonus to melee attacks, but it can attack only the creature to which it is attached. An attached creature can't move (though it moves with the target), take actions that require two hands, or make attacks of opportunity. An attached creature can be removed with a successful Strength check (DC = 10 + 1-1/2 + CR) made as a move action, or it can remove itself from its target as a move action.",
-		"type": "ATTACK"
-	},
-	{
-		"name": "Breath Weapon",
-		"description": "1d6 energy damage + 1d6 per CR, usable 1d4 rounds. Range: Cone = 30 ft + 10 per size category above Medium - 5 per size category below Medium. Line: Double Range",
-		"type": "OFFENSE"
-	},
-	{
-		"name": "Change Shape",
-		"description": "Take the appearance of specific creature or type of creature. Retain most physical attributes but may gain: Blindsight(sense), Darkvision, Low-Light Vision, Swim 30ft. Can breathe in any environment assumed shape can breathe in. +10 to Disguise checks. Can assume forms 1 Size Category Larger or Smaller.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Compression",
-		"description": "Can move through areas as small as 1/4 its space without squeezing, or 1/8th while squeezing.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Create Darkness",
-		"description": "As a standard action, the creature can create a 20 foot radius area of darkness centered on itself which negates the effects of all non-magical light sources in the area. The darkness lasks for a number of minutes equal to the creature's CR and the creature can dismiss the effect as a standard action. The darkness doesn't move with the creature. Unless otherwise noted, any magic source of light can increase the light level in the area as normal.",
-		"type": "Offensive"
-	},
-	{
-		"name": "Crush",
-		"description": "When ending a flying or jumping movement, the creature can land on targets at least 3 Size Categories smaller. The creature is automatically knocked prone, take Standard Melee Attack damage and are pinned. Each target can escape normally on its turn and the pin ends automatically if the crushing creature moves off the target's square. A crushed target does not take damage from the crush more than once, unless the crushing creature moves fully off the creature and back on.",
-		"type": "OFFENSE"
-	},
-	{
-		"name": "Dependency",
-		"description": "The creature is dependent on a substancek, sense or something else to survive or function normally, if the creature is dependent on something to live (such as water), it can survive without it a number of minutes equal to 5*CON modifier. Beyond this limit, the creature runs the risk of negative effects, such as suffocation or death. A creature that is dependent on something to function normally (such as blindsight and no vision sense) usually gains a negative condition when it loses that thing.",
-		"type": "WEAKNESS"
-	},
-	{
-		"name": "Detect Alignment",
-		"description": "The creature can detect the alignment of another creature, this functions as detect magic but rather than determining which creawtures and objects in teh area are magical, the creature can determine one other creature's alignment.",
-		"type": "SENSE"
-	},
-	{
-		"name": "Distraction",
-		"description": "The creature can nauseate targets that it damages. A living creature that takes damage from a creature with distraction is nauseated for 1 round; the target can negate the effect with a successful fortitude save at the listed DC (probably 15 by default)",
-		"type": "OFFENSE"
-	},
-	{
-		"name": "Earth Glide",
-		"description": "When a creature burrows it can pass through dirt, stone and other sorts of earth except metal as easily as a fish swims through water. If protected against fire damage, it can glid through lava. Burrowing leaves no tunnel or hole, nor does it create any riplle or other sign of its presence.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Energy Drain",
-		"description": "A successful energy drain attack inflicts one or more negative levels. If an attack that includes an energy drain scores a critical hit, it inflicts twice the listed number of negative levels. Unless otherwise specified in the draining creature's description, it gains 5 Temporary Hit Points per negative level inflicted. Negative levels from energy drain last 24 hours or until removed by magic or tech. After 24 hours the affected creature attempts a Fortitude Save (based on creature). On success the negative level goes away. On failure, the negative level becomes permanent. A separate save is required for each negative level.",
-		"type": "OFFENSE"
-	},
-	{
-		"name": "Fast Healing",
-		"description": "The creature regains the listed number of Hit Points at the start of its turn. Unless otherwise noted, the creature caxn never exceed its maximum Hit Points. Fast Healing does not restore hit points from starvation, thirst, or suffocation, nor does it allow a creature to regrow or reattach body parts unless otherwise stated. Fast Healing functions until a creature dies at which point it ends immediately.",
-		"type": "DEFENSE"
-	},
-	{
-		"name": "Ferocity",
-		"description": "When a creature is brought to 0 HP, it can fight for 1 more round. It can act nomrally until the end of its next turn; if it has 0 HP at that point, it dies. If it would lose further Hit Points before this, it dies.",
-		"type": "DEFENSE"
-	},
-	{
-		"name": "Fly",
-		"description": "",
-		"type": "OTHER"
-	},
-	{
-		"name": "Frightful Presence",
-		"description": "The creature's presence unsettles its foes, it can activate this ability as part of the action of making an attack or as a move action, but it can activate it only once per round. It usually has a range of 30 ft. Opponents must succeed a Will save or be Shaken. Duration: 5d6 rounds unless otherwise specified. Once an opponent is exposed, it cannot be affected again for 24 hours. This is an emotion, fear, mind-affecting and sense-dependent effect.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Gaze",
-		"description": "Opponents that look at a creature with gaze are in danger of being charmed, paralyzed, turned to stone, or other negative effect. Each opponent within the gaze's listed range must attempt a saving throw (usually Fortitude or Will) at the beginning of its turn. On success, the effect is negated. An opponent can give itself an advantage in 2 ways: Looking Obliquely - avoid looking directly at the creature's face or looking through a camera or similar gains +4 circumstance bonus to saving throw. Blocking its Vision: completely blocking or covering its own visual sensors automatically passes the save but the creature with Gaze gains Total Concealment vs that opponent. Gaze affects Ethereal creatures, but not creatures without visual sensors. Creatures with Gaze are immune to their own species' gaze. Allies can still be affected but are always Looking Obliquely. A creature with Gaze who veils its eyes negates the ability.",
-		"type": "Offense"
-	},
-	{
-		"name": "Grab",
-		"description": "If a creature beats KAC on an attack by 4 or more, the creature automatically grapples the foe as a free action (if it hits KAC+13 it pins).The creature does not need a free limb as long as it can make the listed attack, and it can potentially grapple more than one target if it has more than one attack with Grab. The creature can maintain it by either making another successful grab attack, or by making a grapple combat maneuver as normal.",
-		"type": "ATTACK"
-	},
-	{
-		"name": "Light Blindness",
-		"description": "The creature is blinded for 1 round when first exposed to bright light, such as sunlight and it is dazzled for as long as it remains in an area of bright light.",
-		"type": "WEAKNESS"
-	},
-	{
-		"name": "Multiattack",
-		"description": "When making a full attack, the creature can make all of the listed attacks instead of 2 attacks, at the attack bonuses indicated. It can make them in any order. Impose a -6 penalty instead of -4 on the attacks.",
-		"type": "ATTACK"
-	},
-	{
-		"name": "Natural Weapons",
-		"description": "Natural weapons and natural atttacks such as acid spit, bite, claw or slam don't require ammunition and can't be disarmed or sundered.",
-		"type": "ATTACK"
-	},
-	{
-		"name": "No Breath",
-		"description": "The creature doesn't breathe and is immune to effects that require breathing (such as inhaled poison). This does not give it immunity to cloud or gas attacks that don't require breathing.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Plantlike",
-		"description": "For effects targetting creatures by type plantlike creatures count as both their type and plants, whichever is worse. They also receive +2 racial bonus on saving throws vs mind-affecting, paralysis, poison, polymorph, sleep, and stun, unless the effect works on plants",
-		"type": "OTHER"
-	},
-	{
-		"name": "Regeneration",
-		"description": "The creature regains Hit Points at teh start of its turn, as with fast healing, but it can't die as long as its regeneration is still functioning (although it still falls unconscious when their Hit Points reach 0). Certain attacks typically acid or fire cause a creatures regeneration to stop functioning for 1 round. During that round the creature can't regain Hit Points and can die normally. Regeneration doesn't restore hit points lost from starvation, thirst, or suffocation. Creatures with regeneration can regrow lost portions of their bodies and can reattach severed body parts if recovered within 1 hour of severing. Severed parts that aren't reattached wither and decompose normally.",
-		"type": "DEFENSE"
-	},
-	{
-		"name": "See In Darkness",
-		"description": "",
-		"type": "SENSE"
-	},
-	{
-		"name": "Sense Through",
-		"description": "The creature can sense through obstacles that would normally block the ability to perceive what is beyond them. The specific sense this ability applies to is specific to the creature. If the ability allows the creature to sense through only a specific material, that is listed after the sense.",
-		"type": "SENSE"
-	},
-	{
-		"name": "Spell Resistance",
-		"description": "The creature can avoid the effects of some spells and spell-like abilities that would directly affect it. To determine whether a spell or spell-like ability works against a creature with spell resistance, the caster must attempt a caster level check (1d20+caster level). If the result equals or exceeds the creature's spell resistance, the spell works normally, though the creature can still attempt any saving throws normally allowed.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Stellar Alignment",
-		"description": "The creature is aligned to the cycles of the solar system. Creatures with stellar alignment usually have stellar revelations and zenith revelations, either ones from the solarian class or ones unique to the creature. When using stellar revelations, the creature is always considered attuned, however it is not always considered fully attuned, so it normally can't always use zenith powers. When you roll initiative for the creature, roll 1d3. Once that many rounds have passed, the creature is considered fully attuned and can use its zenith powers. After using a zenith power it is no longer fully attuned and you roll 1d3 again to see how long it takes to recharge. If a creature has a specific stellar alignment, it is only considered attuned in the indicated mode and only can become fully attuned in the indicated mode.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Summon Allies",
-		"description": "The creature can summon creatures of the same type as itself as a full action, the summoned ally returns to the place from which it came after 1 hour. Choose either a creature of the same CR with 35% chance of succcess, or a creature with a CR no greater than the monster's minus 5 with 60% chance of success.",
-		"type": "OTHER"
-	},
-	{
-		"name": "Swallow Whole",
-		"description": "If the creature hits with the attack (usually a Bite), it deals normal damage and if it passes KAC+4 it begins to grapple. if it passes KAC+13 it pins. No free limb is needed. The creature can only swallow targets at least 1 Size Category smaller than itself and can have only one creature swalled at a time (doubled for each size category beyond 1 smaller). On the creature's next turn after grappling, if the target has not escaped, it automatically takes damage at the beginning of the creature's turn. The creature can make a new attack, if it hits KAC the grapple is maintained, KAC+4 the target is swalled whole (no damage). Once Swalled, the target takes the damage at the beginning of its turn every round, it is grappled. It can cut its way out (EAC is same, KAC is KAC-4) by dealing 1/4 of the creature's HP. Attacks that are not Slashing only do half damage. If a target cuts its way out, the creature can't swallow whole again until healed. The target can also climb out by making a KAC+8 grapple check and an Athletics check to climb (DC = 10+1-1/2*CR). Each is a full round action.",
-		"type": "Offensive Ability"
-	}
-
-
-]}
-
+  "abilities": {
+    "Telepathy": {
+      "name": "Telepathy",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Extension of All": {
+      "name": "Extension of All",
+      "description": "",
+      "type": "SPECIAL"
+    },
+    "Resist Electricity 10": {
+      "name": "Resist Electricity 10",
+      "description": "",
+      "type": "RESIST"
+    },
+    "Resist Fire 10": {
+      "name": "Resist Fire 10",
+      "description": "",
+      "type": "RESIST"
+    },
+    "Channel Healing": {
+      "name": "Channel Healing",
+      "description": "",
+      "type": "SPECIAL"
+    },
+    "Resist Cold 10": {
+      "name": "Resist Cold 10",
+      "description": "",
+      "type": "RESIST"
+    },
+    "Resist Sonic 10": {
+      "name": "Resist Sonic 10",
+      "description": "",
+      "type": "RESIST"
+    },
+    "Saving Throw Poison 4": {
+      "name": "Saving Throw Poison 4",
+      "description": "",
+      "type": "DEFENSE"
+    },
+    "Low-Light Vision": {
+      "name": "Low-Light Vision",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Constructed": {
+      "name": "Constructed",
+      "description": "",
+      "type": "RESIST"
+    },
+    "Flat Affect": {
+      "name": "Flat Affect",
+      "description": "",
+      "type": "WEAKNESS"
+    },
+    "Upgrade Slot": {
+      "name": "Upgrade Slot",
+      "description": "",
+      "type": "OTHER"
+    },
+    "Truespeech": {
+      "name": "Truespeech",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Protective Aura": {
+      "name": "Protective Aura",
+      "description": "",
+      "type": "SPECIAL"
+    },
+    "Water Breathing": {
+      "name": "Water Breathing",
+      "description": "",
+      "type": "OTHER"
+    },
+    "Amphibious": {
+      "name": "Amphibious",
+      "description": "",
+      "type": "OTHER"
+    },
+    "Darkvision": {
+      "name": "Darkvision",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Teleport": {
+      "name": "Teleport",
+      "description": "",
+      "type": "SPECIAL"
+    },
+    "Aura of Menace": {
+      "name": "Aura of Menace",
+      "description": "",
+      "type": "SPECIAL"
+    },
+    "Unliving": {
+      "name": "Unliving",
+      "description": "",
+      "type": "OTHER"
+    },
+    "Blindsight": {
+      "name": "Blindsight",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Mindless": {
+      "name": "Mindless",
+      "description": "",
+      "type": "WEAKNESS"
+    },
+    "Sightless": {
+      "name": "Sightless",
+      "description": "",
+      "type": "WEAKNESS"
+    },
+    "Immunity Cold": {
+      "name": "Immunity Cold",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Critical Hits": {
+      "name": "Immunity Critical Hits",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Poison": {
+      "name": "Immunity Poison",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Paralysis": {
+      "name": "Immunity Paralysis",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Sleep": {
+      "name": "Immunity Sleep",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Electricity": {
+      "name": "Immunity Electricity",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Petrification": {
+      "name": "Immunity Petrification",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Immunity Acid": {
+      "name": "Immunity Acid",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Construct Immunities": {
+      "name": "Construct Immunities",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Ooze Immunities": {
+      "name": "Ooze Immunities",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Plant Immunities": {
+      "name": "Plant Immunities",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Undead Immunities": {
+      "name": "Undead Immunities",
+      "description": "",
+      "type": "IMMUNITY"
+    },
+    "Amorphous": {
+      "name": "Amorphous",
+      "description": "Shapeless body, crtiical hits do normal damage but still apply effects",
+      "type": "DEFENSE"
+    },
+    "Attach": {
+      "name": "Attach",
+      "description": "The creature can attempt a special attack against KAC as a standard action. If it succeeds, it deals no damage but it adheresto the target. Once attached, the creature gains a +4 bonus to its AC (from cover) and a +2 circumstance bonus to melee attacks, but it can attack only the creature to which it is attached. An attached creature can't move (though it moves with the target), take actions that require two hands, or make attacks of opportunity. An attached creature can be removed with a successful Strength check (DC = 10 + 1-1/2 + CR) made as a move action, or it can remove itself from its target as a move action.",
+      "type": "ATTACK"
+    },
+    "Breath Weapon": {
+      "name": "Breath Weapon",
+      "description": "1d6 energy damage + 1d6 per CR, usable 1d4 rounds. Range: Cone = 30 ft + 10 per size category above Medium - 5 per size category below Medium. Line: Double Range",
+      "type": "OFFENSE"
+    },
+    "Change Shape": {
+      "name": "Change Shape",
+      "description": "Take the appearance of specific creature or type of creature. Retain most physical attributes but may gain: Blindsight(sense), Darkvision, Low-Light Vision, Swim 30ft. Can breathe in any environment assumed shape can breathe in. +10 to Disguise checks. Can assume forms 1 Size Category Larger or Smaller.",
+      "type": "OTHER"
+    },
+    "Compression": {
+      "name": "Compression",
+      "description": "Can move through areas as small as 1/4 its space without squeezing, or 1/8th while squeezing.",
+      "type": "OTHER"
+    },
+    "Create Darkness": {
+      "name": "Create Darkness",
+      "description": "As a standard action, the creature can create a 20 foot radius area of darkness centered on itself which negates the effects of all non-magical light sources in the area. The darkness lasks for a number of minutes equal to the creature's CR and the creature can dismiss the effect as a standard action. The darkness doesn't move with the creature. Unless otherwise noted, any magic source of light can increase the light level in the area as normal.",
+      "type": "Offensive"
+    },
+    "Crush": {
+      "name": "Crush",
+      "description": "When ending a flying or jumping movement, the creature can land on targets at least 3 Size Categories smaller. The creature is automatically knocked prone, take Standard Melee Attack damage and are pinned. Each target can escape normally on its turn and the pin ends automatically if the crushing creature moves off the target's square. A crushed target does not take damage from the crush more than once, unless the crushing creature moves fully off the creature and back on.",
+      "type": "OFFENSE"
+    },
+    "Dependency": {
+      "name": "Dependency",
+      "description": "The creature is dependent on a substancek, sense or something else to survive or function normally, if the creature is dependent on something to live (such as water), it can survive without it a number of minutes equal to 5*CON modifier. Beyond this limit, the creature runs the risk of negative effects, such as suffocation or death. A creature that is dependent on something to function normally (such as blindsight and no vision sense) usually gains a negative condition when it loses that thing.",
+      "type": "WEAKNESS"
+    },
+    "Detect Alignment": {
+      "name": "Detect Alignment",
+      "description": "The creature can detect the alignment of another creature, this functions as detect magic but rather than determining which creawtures and objects in teh area are magical, the creature can determine one other creature's alignment.",
+      "type": "SENSE"
+    },
+    "Distraction": {
+      "name": "Distraction",
+      "description": "The creature can nauseate targets that it damages. A living creature that takes damage from a creature with distraction is nauseated for 1 round; the target can negate the effect with a successful fortitude save at the listed DC (probably 15 by default)",
+      "type": "OFFENSE"
+    },
+    "Earth Glide": {
+      "name": "Earth Glide",
+      "description": "When a creature burrows it can pass through dirt, stone and other sorts of earth except metal as easily as a fish swims through water. If protected against fire damage, it can glid through lava. Burrowing leaves no tunnel or hole, nor does it create any riplle or other sign of its presence.",
+      "type": "OTHER"
+    },
+    "Energy Drain": {
+      "name": "Energy Drain",
+      "description": "A successful energy drain attack inflicts one or more negative levels. If an attack that includes an energy drain scores a critical hit, it inflicts twice the listed number of negative levels. Unless otherwise specified in the draining creature's description, it gains 5 Temporary Hit Points per negative level inflicted. Negative levels from energy drain last 24 hours or until removed by magic or tech. After 24 hours the affected creature attempts a Fortitude Save (based on creature). On success the negative level goes away. On failure, the negative level becomes permanent. A separate save is required for each negative level.",
+      "type": "OFFENSE"
+    },
+    "Fast Healing": {
+      "name": "Fast Healing",
+      "description": "The creature regains the listed number of Hit Points at the start of its turn. Unless otherwise noted, the creature caxn never exceed its maximum Hit Points. Fast Healing does not restore hit points from starvation, thirst, or suffocation, nor does it allow a creature to regrow or reattach body parts unless otherwise stated. Fast Healing functions until a creature dies at which point it ends immediately.",
+      "type": "DEFENSE"
+    },
+    "Ferocity": {
+      "name": "Ferocity",
+      "description": "When a creature is brought to 0 HP, it can fight for 1 more round. It can act nomrally until the end of its next turn; if it has 0 HP at that point, it dies. If it would lose further Hit Points before this, it dies.",
+      "type": "DEFENSE"
+    },
+    "Fly": {
+      "name": "Fly",
+      "description": "",
+      "type": "OTHER"
+    },
+    "Frightful Presence": {
+      "name": "Frightful Presence",
+      "description": "The creature's presence unsettles its foes, it can activate this ability as part of the action of making an attack or as a move action, but it can activate it only once per round. It usually has a range of 30 ft. Opponents must succeed a Will save or be Shaken. Duration: 5d6 rounds unless otherwise specified. Once an opponent is exposed, it cannot be affected again for 24 hours. This is an emotion, fear, mind-affecting and sense-dependent effect.",
+      "type": "OTHER"
+    },
+    "Gaze": {
+      "name": "Gaze",
+      "description": "Opponents that look at a creature with gaze are in danger of being charmed, paralyzed, turned to stone, or other negative effect. Each opponent within the gaze's listed range must attempt a saving throw (usually Fortitude or Will) at the beginning of its turn. On success, the effect is negated. An opponent can give itself an advantage in 2 ways: Looking Obliquely - avoid looking directly at the creature's face or looking through a camera or similar gains +4 circumstance bonus to saving throw. Blocking its Vision: completely blocking or covering its own visual sensors automatically passes the save but the creature with Gaze gains Total Concealment vs that opponent. Gaze affects Ethereal creatures, but not creatures without visual sensors. Creatures with Gaze are immune to their own species' gaze. Allies can still be affected but are always Looking Obliquely. A creature with Gaze who veils its eyes negates the ability.",
+      "type": "Offense"
+    },
+    "Grab": {
+      "name": "Grab",
+      "description": "If a creature beats KAC on an attack by 4 or more, the creature automatically grapples the foe as a free action (if it hits KAC+13 it pins).The creature does not need a free limb as long as it can make the listed attack, and it can potentially grapple more than one target if it has more than one attack with Grab. The creature can maintain it by either making another successful grab attack, or by making a grapple combat maneuver as normal.",
+      "type": "ATTACK"
+    },
+    "Light Blindness": {
+      "name": "Light Blindness",
+      "description": "The creature is blinded for 1 round when first exposed to bright light, such as sunlight and it is dazzled for as long as it remains in an area of bright light.",
+      "type": "WEAKNESS"
+    },
+    "Multiattack": {
+      "name": "Multiattack",
+      "description": "When making a full attack, the creature can make all of the listed attacks instead of 2 attacks, at the attack bonuses indicated. It can make them in any order. Impose a -6 penalty instead of -4 on the attacks.",
+      "type": "ATTACK"
+    },
+    "Natural Weapons": {
+      "name": "Natural Weapons",
+      "description": "Natural weapons and natural atttacks such as acid spit, bite, claw or slam don't require ammunition and can't be disarmed or sundered.",
+      "type": "ATTACK"
+    },
+    "No Breath": {
+      "name": "No Breath",
+      "description": "The creature doesn't breathe and is immune to effects that require breathing (such as inhaled poison). This does not give it immunity to cloud or gas attacks that don't require breathing.",
+      "type": "OTHER"
+    },
+    "Plantlike": {
+      "name": "Plantlike",
+      "description": "For effects targetting creatures by type plantlike creatures count as both their type and plants, whichever is worse. They also receive +2 racial bonus on saving throws vs mind-affecting, paralysis, poison, polymorph, sleep, and stun, unless the effect works on plants",
+      "type": "OTHER"
+    },
+    "Regeneration": {
+      "name": "Regeneration",
+      "description": "The creature regains Hit Points at teh start of its turn, as with fast healing, but it can't die as long as its regeneration is still functioning (although it still falls unconscious when their Hit Points reach 0). Certain attacks typically acid or fire cause a creatures regeneration to stop functioning for 1 round. During that round the creature can't regain Hit Points and can die normally. Regeneration doesn't restore hit points lost from starvation, thirst, or suffocation. Creatures with regeneration can regrow lost portions of their bodies and can reattach severed body parts if recovered within 1 hour of severing. Severed parts that aren't reattached wither and decompose normally.",
+      "type": "DEFENSE"
+    },
+    "See In Darkness": {
+      "name": "See In Darkness",
+      "description": "",
+      "type": "SENSE"
+    },
+    "Sense Through": {
+      "name": "Sense Through",
+      "description": "The creature can sense through obstacles that would normally block the ability to perceive what is beyond them. The specific sense this ability applies to is specific to the creature. If the ability allows the creature to sense through only a specific material, that is listed after the sense.",
+      "type": "SENSE"
+    },
+    "Spell Resistance": {
+      "name": "Spell Resistance",
+      "description": "The creature can avoid the effects of some spells and spell-like abilities that would directly affect it. To determine whether a spell or spell-like ability works against a creature with spell resistance, the caster must attempt a caster level check (1d20+caster level). If the result equals or exceeds the creature's spell resistance, the spell works normally, though the creature can still attempt any saving throws normally allowed.",
+      "type": "OTHER"
+    },
+    "Stellar Alignment": {
+      "name": "Stellar Alignment",
+      "description": "The creature is aligned to the cycles of the solar system. Creatures with stellar alignment usually have stellar revelations and zenith revelations, either ones from the solarian class or ones unique to the creature. When using stellar revelations, the creature is always considered attuned, however it is not always considered fully attuned, so it normally can't always use zenith powers. When you roll initiative for the creature, roll 1d3. Once that many rounds have passed, the creature is considered fully attuned and can use its zenith powers. After using a zenith power it is no longer fully attuned and you roll 1d3 again to see how long it takes to recharge. If a creature has a specific stellar alignment, it is only considered attuned in the indicated mode and only can become fully attuned in the indicated mode.",
+      "type": "OTHER"
+    },
+    "Summon Allies": {
+      "name": "Summon Allies",
+      "description": "The creature can summon creatures of the same type as itself as a full action, the summoned ally returns to the place from which it came after 1 hour. Choose either a creature of the same CR with 35% chance of succcess, or a creature with a CR no greater than the monster's minus 5 with 60% chance of success.",
+      "type": "OTHER"
+    },
+    "Swallow Whole": {
+      "name": "Swallow Whole",
+      "description": "If the creature hits with the attack (usually a Bite), it deals normal damage and if it passes KAC+4 it begins to grapple. if it passes KAC+13 it pins. No free limb is needed. The creature can only swallow targets at least 1 Size Category smaller than itself and can have only one creature swalled at a time (doubled for each size category beyond 1 smaller). On the creature's next turn after grappling, if the target has not escaped, it automatically takes damage at the beginning of the creature's turn. The creature can make a new attack, if it hits KAC the grapple is maintained, KAC+4 the target is swalled whole (no damage). Once Swalled, the target takes the damage at the beginning of its turn every round, it is grappled. It can cut its way out (EAC is same, KAC is KAC-4) by dealing 1/4 of the creature's HP. Attacks that are not Slashing only do half damage. If a target cuts its way out, the creature can't swallow whole again until healed. The target can also climb out by making a KAC+8 grapple check and an Athletics check to climb (DC = 10+1-1/2*CR). Each is a full round action.",
+      "type": "Offensive Ability"
+    }
+  }
+}

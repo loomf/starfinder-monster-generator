@@ -26,7 +26,7 @@ type TypeSpec struct {
 	Subtype *Subtype
 }
 
-func (this *Creature) GenerateStatBlock() (StatBlock, error) {
+func (this *Creature) GenerateStatBlock(abilities map[string]Ability) (StatBlock, error) {
 	var statBlock StatBlock
 
 	// Step 1: Array
@@ -115,65 +115,31 @@ func (this *Creature) GenerateStatBlock() (StatBlock, error) {
 	// TODO
 
 	// Step 2: Creature Type Graft
+    // 2a: Traits
+    statBlock.AddAbilities(this.Type.Abilities, abilities)
+    // 2b: Adjustments
+    for _, attack := range statBlock.Melee {
+        attack.AttackBonus += this.Type.Adjustments.AttackBonus
+    }
+    for _, attack := range statBlock.Ranged {
+        attack.AttackBonus += this.Type.Adjustments.AttackBonus
+    }
+    statBlock.Fort += this.Type.Adjustments.Fort
+    statBlock.Reflex += this.Type.Adjustments.Reflex
+    statBlock.Will += this.Type.Adjustments.Will
+
+    // Step 3: Creature Subtype Graft
+    statBlock.AddAbilities(this.Subtype.Abilities, abilities)
+    for skillName, level := range this.Subtype.Skills {
+        switch level {
+        case "Good":
+            statBlock.Skills[skillName] = this.Array.GoodSkillBonus
+        case "Master":
+            statBlock.Skills[skillName] = this.Array.MasterSkillBonus
+        default:
+            panic(fmt.Errorf("Unknown skill %q from subtype %q\n", skillName, this.Subtype.Name))
+        }
+    }
 
 	return statBlock, nil
 }
-
-/*
-
-func (this *Creature) AssignAbilities(abilities []Ability, extraAbilities []string, numAbilities int) {
-	this.Senses = make(map[string]struct{})
-	this.Immunities = make(map[string]struct{})
-	this.Resistances = make(map[string]struct{})
-	this.Weaknesses = make(map[string]struct{})
-	this.OffensiveAbilities = make(map[string]struct{})
-	this.DefensiveAbilities = make(map[string]struct{})
-	this.SpecialAbilities = make(map[string]struct{})
-	this.OtherAbilities = make(map[string]struct{})
-	abilMap := make(map[string]Ability)
-	for _, ability := range abilities {
-		abilMap[ability.Name] = ability
-	}
-
-	assignAbility := func(ability Ability) {
-		switch ability.Type {
-		case "SENSE":
-			this.Senses[ability.Name] = struct{}{}
-		case "IMMUNITY":
-			this.Immunities[ability.Name] = struct{}{}
-		case "RESIST":
-			this.Resistances[ability.Name] = struct{}{}
-		case "WEAKNESS":
-			this.Weaknesses[ability.Name] = struct{}{}
-		case "OFFENSE":
-			this.OffensiveAbilities[ability.Name] = struct{}{}
-		case "DEFENSE":
-			this.DefensiveAbilities[ability.Name] = struct{}{}
-		case "SPECIAL":
-			this.SpecialAbilities[ability.Name] = struct{}{}
-		case "OTHER":
-			this.OtherAbilities[ability.Name] = struct{}{}
-		case "ATTACK":
-			this.OffensiveAbilities[ability.Name] = struct{}{}
-		case "":
-			//Ability is unfinished
-		default:
-			panic(fmt.Sprintf("Unknown ability type: %s for ability %s", ability.Type, ability.Name))
-		}
-		delete(abilMap, ability.Name)
-	}
-
-	for _, ability := range extraAbilities {
-		assignAbility(abilMap[ability])
-	}
-
-	for i := 0; i < numAbilities; i++ {
-		abilList := make([]string, 0, len(abilMap))
-		for ability := range abilMap {
-			abilList = append(abilList, ability)
-		}
-		ability := abilMap[GetOneOf("Choose an ability: ", abilList)]
-		assignAbility(ability)
-	}
-}
-*/

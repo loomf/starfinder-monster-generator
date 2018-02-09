@@ -108,24 +108,34 @@ type StatBlock struct {
 	EAC, KAC           int
 	HP                 int
 	Fort, Reflex, Will int
-	DR                 string
-	Skills             map[string]int
-	//Spells                       map[Spell]int
-	Speed                        map[string]int
-	Senses                       map[string]struct{}
-	Immunities                   map[string]struct{}
-	Resistances                  map[string]struct{}
-	Weaknesses                   map[string]struct{}
-	Specials                     map[string]struct{}
+	AbilityDC, BaseSpellDC       int
+	STR, DEX, CON, INT, WIS, CHA int
+	Languages                    map[string]struct{}
+	Skills                       map[string]int
 	Melee                        []Attack
 	Ranged                       []Attack
-	OffensiveAbilities           map[string]struct{}
-	DefensiveAbilities           map[string]struct{}
-	SpecialAbilities             map[string]struct{}
-	OtherAbilities               map[string]struct{}
-	STR, DEX, CON, INT, WIS, CHA int
-	Languages                    map[string]bool
-	AbilityDC, BaseSpellDC       int
+	Speed                        map[string]int
+    Abilities                    map[string]map[string]Ability
+	DR                           string
+	//Spells                       map[Spell]int
+}
+
+func (statBlock *StatBlock) AddAbilities(abilityNames []string, abilities map[string]Ability) error {
+    if statBlock.Abilities == nil {
+        statBlock.Abilities = make(map[string]map[string]Ability)
+    }
+    for _, abilityName := range abilityNames {
+        ability, realAbilityName := abilities[abilityName]
+        if !realAbilityName {
+            return fmt.Errorf("Unknown ability: %s\n", realAbilityName)
+        }
+        if _, ok := statBlock.Abilities[ability.Type]; !ok {
+            statBlock.Abilities[ability.Type] = make(map[string]Ability)
+        }
+        statBlock.Abilities[ability.Type][ability.Name] = ability
+        fmt.Printf("abilities: %s\n", statBlock.Abilities)
+    }
+    return nil
 }
 
 type Attack struct {

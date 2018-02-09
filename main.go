@@ -38,7 +38,7 @@ func main() {
 			ArrayType: "",
 		},
 	}
-	err = creature.Complete(arrays, types, subtypes, skills, abilities)
+	err = creature.Complete(arrays, types, subtypes, skills)
 	//fmt.Printf("%s\n", creature)
 	fmt.Println(err)
 	// builder := CreatureBuilder{}
@@ -55,7 +55,7 @@ func main() {
 		panic(err)
 	}
 
-	statBlock, err := creature.GenerateStatBlock()
+	statBlock, err := creature.GenerateStatBlock(abilities)
 	if err != nil {
 		panic(err)
 	}

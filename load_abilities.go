@@ -5,10 +5,10 @@ import (
 	"io/ioutil"
 )
 
-func LoadAbilities(filename string) ([]Ability, error) {
+func LoadAbilities(filename string) (map[string]Ability, error) {
 	// TODO: differentiate between free and non-free abilities
 	type file struct {
-		Abilities []Ability
+		Abilities map[string]Ability
 	}
 
 	var fileAbilities file
