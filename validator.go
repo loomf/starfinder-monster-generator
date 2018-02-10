@@ -226,7 +226,7 @@ func (this *Creature) CompleteModifierAssignments() error {
 		}
 	}
 
-	fmt.Printf("assignments: %s\n", this.ModifierAssignments)
+	log.Printf("assignments: %s\n", this.ModifierAssignments)
 
 	return nil
 }

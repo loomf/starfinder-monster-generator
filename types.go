@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 	"strings"
 )
@@ -133,7 +134,7 @@ func (statBlock *StatBlock) AddAbilities(abilityNames []string, abilities map[st
             statBlock.Abilities[ability.Type] = make(map[string]Ability)
         }
         statBlock.Abilities[ability.Type][ability.Name] = ability
-        fmt.Printf("abilities: %s\n", statBlock.Abilities)
+        log.Printf("abilities: %s\n", statBlock.Abilities)
     }
     return nil
 }

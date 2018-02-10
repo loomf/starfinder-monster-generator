@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"math/rand"
 	"os"
@@ -34,13 +33,10 @@ func main() {
 	}
 	// spew.Dump(arrays)
 	creature := Creature{
-		ArraySpec: ArraySpec{
-			ArrayType: "",
-		},
 	}
 	err = creature.Complete(arrays, types, subtypes, skills)
 	//fmt.Printf("%s\n", creature)
-	fmt.Println(err)
+	log.Println(err)
 	// builder := CreatureBuilder{}
 	// builder.GetArrayType(arrays)
 	// builder.GetType(types)
@@ -48,9 +44,11 @@ func main() {
 	// spew.Dump(builder)
 	// creature := builder.Build(skills, abilities)
 	//spew.Dump(creature)
+	debugEncoder := json.NewEncoder(os.Stderr)
+	debugEncoder.SetIndent("", "  ")
 	encoder := json.NewEncoder(os.Stdout)
 	encoder.SetIndent("", "  ")
-	err = encoder.Encode(creature)
+	err = debugEncoder.Encode(creature)
 	if err != nil {
 		panic(err)
 	}
