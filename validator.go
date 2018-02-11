@@ -90,7 +90,7 @@ func (this *Creature) CompleteArrayType(validArrays map[string]map[string]Array)
 		if err != nil {
 			return err
 		}
-		log.Printf("Assinging array type %q\n", randomArrayType)
+		log.Printf("Assigning array type %q\n", randomArrayType)
 		this.ArrayType = randomArrayType
 	}
 	arrayTypeArrays, validArrayType := validArrays[this.ArrayType]
@@ -108,7 +108,7 @@ func (this *Creature) CompleteCR() error {
 		if err != nil {
 			panic(err)
 		}
-		log.Printf("Assinging CR %q\n", randomCR)
+		log.Printf("Assigning CR %q\n", randomCR)
 		this.CR = randomCR
 	}
 	array, validCR := this.CRArrays[this.CR]
@@ -154,7 +154,7 @@ func (this *Creature) CompleteType(validTypes map[string]Type, validSubtypes map
 			}
 		}
 		randomValidType := validTypes[validTypeChoices[rand.Intn(len(validTypeChoices))]]
-		log.Printf("Assinging creature type %q\n", randomValidType.Name)
+		log.Printf("Assigning creature type %q\n", randomValidType.Name)
 		this.Type = &randomValidType
 	}
 
@@ -196,7 +196,7 @@ func (this *Creature) CompleteSubtype(validTypes map[string]Type, validSubtypes 
 			}
 		}
 		randomValidSubtype := validSubtypes[validSubtypeChoices[rand.Intn(len(validSubtypeChoices))]]
-		log.Printf("Assinging creature type %q\n", randomValidSubtype.Name)
+		log.Printf("Assigning creature subtype %q\n", randomValidSubtype.Name)
 		this.Subtype = &randomValidSubtype
 	}
 

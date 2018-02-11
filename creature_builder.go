@@ -115,31 +115,33 @@ func (this *Creature) GenerateStatBlock(abilities map[string]Ability) (StatBlock
 	// TODO
 
 	// Step 2: Creature Type Graft
-    // 2a: Traits
-    statBlock.AddAbilities(this.Type.Abilities, abilities)
-    // 2b: Adjustments
-    for _, attack := range statBlock.Melee {
-        attack.AttackBonus += this.Type.Adjustments.AttackBonus
-    }
-    for _, attack := range statBlock.Ranged {
-        attack.AttackBonus += this.Type.Adjustments.AttackBonus
-    }
-    statBlock.Fort += this.Type.Adjustments.Fort
-    statBlock.Reflex += this.Type.Adjustments.Reflex
-    statBlock.Will += this.Type.Adjustments.Will
+	statBlock.Type = this.Type.Name
+	// 2a: Traits
+	statBlock.AddAbilities(this.Type.Abilities, abilities)
+	// 2b: Adjustments
+	for _, attack := range statBlock.Melee {
+		attack.AttackBonus += this.Type.Adjustments.AttackBonus
+	}
+	for _, attack := range statBlock.Ranged {
+		attack.AttackBonus += this.Type.Adjustments.AttackBonus
+	}
+	statBlock.Fort += this.Type.Adjustments.Fort
+	statBlock.Reflex += this.Type.Adjustments.Reflex
+	statBlock.Will += this.Type.Adjustments.Will
 
-    // Step 3: Creature Subtype Graft
-    statBlock.AddAbilities(this.Subtype.Abilities, abilities)
-    for skillName, level := range this.Subtype.Skills {
-        switch level {
-        case "Good":
-            statBlock.Skills[skillName] = this.Array.GoodSkillBonus
-        case "Master":
-            statBlock.Skills[skillName] = this.Array.MasterSkillBonus
-        default:
-            panic(fmt.Errorf("Unknown skill %q from subtype %q\n", skillName, this.Subtype.Name))
-        }
-    }
+	// Step 3: Creature Subtype Graft
+	statBlock.Subtype = this.Subtype.Name
+	statBlock.AddAbilities(this.Subtype.Abilities, abilities)
+	for skillName, level := range this.Subtype.Skills {
+		switch level {
+		case "Good":
+			statBlock.Skills[skillName] = this.Array.GoodSkillBonus
+		case "Master":
+			statBlock.Skills[skillName] = this.Array.MasterSkillBonus
+		default:
+			panic(fmt.Errorf("Unknown skill %q from subtype %q\n", skillName, this.Subtype.Name))
+		}
+	}
 
 	return statBlock, nil
 }

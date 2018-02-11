@@ -33,6 +33,7 @@ func main() {
 	}
 	// spew.Dump(arrays)
 	creature := Creature{
+		TypeSpec: TypeSpec{},
 	}
 	err = creature.Complete(arrays, types, subtypes, skills)
 	//fmt.Printf("%s\n", creature)

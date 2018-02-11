@@ -25,7 +25,7 @@ type Type struct {
 	Name          string
 	Adjustments   Adjustments
 	Abilities     []string
-	ValidSubtypes []string `json:"-"`
+	ValidSubtypes []string
 }
 
 type Adjustments struct {
@@ -38,7 +38,7 @@ type Subtype struct {
 	Abilities  []string
 	Skills     map[string]string
 	Speed      []string
-	ValidTypes []string `json:"-"`
+	ValidTypes []string
 }
 
 type Ability struct {
@@ -102,13 +102,15 @@ func (this *Dice) UnmarshalJSON(b []byte) error {
 }
 
 type StatBlock struct {
-	CR                 string
-	XP                 int
-	Size               string
-	Initiative         int
-	EAC, KAC           int
-	HP                 int
-	Fort, Reflex, Will int
+	CR                           string
+	XP                           int
+	Size                         string
+	Type                         string
+	Subtype                      string
+	Initiative                   int
+	EAC, KAC                     int
+	HP                           int
+	Fort, Reflex, Will           int
 	AbilityDC, BaseSpellDC       int
 	STR, DEX, CON, INT, WIS, CHA int
 	Languages                    map[string]struct{}
@@ -116,27 +118,27 @@ type StatBlock struct {
 	Melee                        []Attack
 	Ranged                       []Attack
 	Speed                        map[string]int
-    Abilities                    map[string]map[string]Ability
+	Abilities                    map[string]map[string]Ability
 	DR                           string
 	//Spells                       map[Spell]int
 }
 
 func (statBlock *StatBlock) AddAbilities(abilityNames []string, abilities map[string]Ability) error {
-    if statBlock.Abilities == nil {
-        statBlock.Abilities = make(map[string]map[string]Ability)
-    }
-    for _, abilityName := range abilityNames {
-        ability, realAbilityName := abilities[abilityName]
-        if !realAbilityName {
-            return fmt.Errorf("Unknown ability: %s\n", realAbilityName)
-        }
-        if _, ok := statBlock.Abilities[ability.Type]; !ok {
-            statBlock.Abilities[ability.Type] = make(map[string]Ability)
-        }
-        statBlock.Abilities[ability.Type][ability.Name] = ability
-        log.Printf("abilities: %s\n", statBlock.Abilities)
-    }
-    return nil
+	if statBlock.Abilities == nil {
+		statBlock.Abilities = make(map[string]map[string]Ability)
+	}
+	for _, abilityName := range abilityNames {
+		ability, realAbilityName := abilities[abilityName]
+		if !realAbilityName {
+			return fmt.Errorf("Unknown ability: %s\n", realAbilityName)
+		}
+		if _, ok := statBlock.Abilities[ability.Type]; !ok {
+			statBlock.Abilities[ability.Type] = make(map[string]Ability)
+		}
+		statBlock.Abilities[ability.Type][ability.Name] = ability
+		log.Printf("abilities: %s\n", statBlock.Abilities)
+	}
+	return nil
 }
 
 type Attack struct {
